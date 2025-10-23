@@ -8,66 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .expand-features {
-            background: none;
-            border: none;
-            color: #f7931e;
-            cursor: pointer;
-            font-weight: 600;
-            padding: 16px 0;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        .expand-features:hover {
-            color: #cf071d;
-        }
-        .expand-icon {
-            transition: transform 0.3s ease;
-        }
-        .expand-icon.rotated {
-            transform: rotate(180deg);
-        }
-        .full-feature-list {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            text-align: left;
-        }
-        .full-feature-list.expanded {
-            max-height: 1200px;
-        }
-        .feature-section {
-            margin-bottom: 20px;
-        }
-        .feature-section-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #f7931e;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #2a4a5c;
-        }
-        .feature-item::before {
-            content: '✓';
-            color: #f7931e;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -92,9 +32,9 @@
     <!-- Hero Section -->
     <section class="hero full-width">
         <div class="container">
-            <h1>Stop Losing <span style="background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Phone Calls</span> to Competitors</h1>
+            <h1>Stop Losing <span class="text-gradient">Phone Calls</span> to Competitors</h1>
             <p class="hero-subtitle">Every month, more than 51 potential customers eliminate your business in browser tabs. The investment to fix this is less than losing one good customer.</p>
-            <p style="font-size: 16px; color: #2a4a5c; font-style: italic; margin-bottom: 48px; font-weight: 500; border-top: 1px solid #bdc3c7; padding-top: 24px; margin-top: 24px;">Human Touch Marketing in an AI & Automated World</p>
+            <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
         </div>
     </section>
 
@@ -105,40 +45,40 @@
                 <h2 class="section-title">Founder's Pricing - Limited to First 50 Clients</h2>
             </div>
             
-            <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+            <div class="grid grid-2 max-w-1100">
                 <!-- 4-Minute Winner -->
                 <div class="pricing-card fade-in">
-                    <div style="background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%); color: #ffffff; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 20px; letter-spacing: 0.5px;">FOUNDER'S PRICING</div>
+                    <div class="founder-badge">FOUNDER'S PRICING</div>
                     
                     <h3 class="pricing-name">4-Minute Winner</h3>
                     <p class="pricing-tagline">Perfect for businesses ready to dominate Google Business Search</p>
                     
-                    <div style="text-decoration: line-through; color: #999; font-size: 16px; text-align: center; margin: 16px 0 8px;">$1,200</div>
+                    <div class="strike text-gray-light text-md text-center mt-md mb-sm">$1,200</div>
                     <div class="pricing-price">$550<span class="pricing-period">/month</span></div>
-                    <div style="text-align: center; color: #666; font-size: 14px; margin-bottom: 24px;">
-                        + $300 implementation fee <span style="color: #999; text-decoration: line-through;">(reg. $600)</span>
+                    <div class="text-center text-gray text-sm mb-lg">
+                        + $300 implementation fee <span class="strike text-gray-light">(reg. $600)</span>
                     </div>
                     
-                    <div style="margin: 24px 0;">
-                        <div style="display: flex; gap: 16px; margin-bottom: 16px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                            <div style="font-size: 24px;">📱</div>
+                    <div class="mt-lg mb-lg">
+                        <div class="feature-highlight-box">
+                            <div class="icon-sm">📱</div>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">2 Posts Per Week</div>
-                                <div style="font-size: 13px; color: #666;">104 pieces of content annually</div>
+                                <div class="font-semibold text-sm mb-sm">2 Posts Per Week</div>
+                                <div class="text-sm text-gray">104 pieces of content annually</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 16px; margin-bottom: 16px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                            <div style="font-size: 24px;">🎯</div>
+                        <div class="feature-highlight-box">
+                            <div class="icon-sm">🎯</div>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Google Business Only</div>
-                                <div style="font-size: 13px; color: #666;">Where local customers make decisions</div>
+                                <div class="font-semibold text-sm mb-sm">Google Business Only</div>
+                                <div class="text-sm text-gray">Where local customers make decisions</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 16px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                            <div style="font-size: 24px;">📊</div>
+                        <div class="feature-highlight-box">
+                            <div class="icon-sm">📊</div>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Performance Tracking</div>
-                                <div style="font-size: 13px; color: #666;">Monthly analytics & insights</div>
+                                <div class="font-semibold text-sm mb-sm">Performance Tracking</div>
+                                <div class="text-sm text-gray">Monthly analytics & insights</div>
                             </div>
                         </div>
                     </div>
@@ -164,46 +104,46 @@
                         </div>
                     </div>
                     
-                    <div style="font-style: italic; color: #2a4a5c; font-size: 14px; margin: 16px 0; padding: 16px; background: #fff8f0; border-radius: 8px; text-align: center;">
+                    <div class="italic text-teal text-sm mt-md mb-md p-md bg-cream rounded text-center">
                         ⏱️ Your time: 10-20 minutes/week capturing content
                     </div>
                     
-                    <a href="tel:5673338779" class="btn btn-primary" style="width: 100%;">Get Started: (567) 333-8779</a>
+                    <a href="tel:5673338779" class="btn btn-primary w-full">Get Started: (567) 333-8779</a>
                 </div>
 
                 <!-- Social Dominator -->
                 <div class="pricing-card featured fade-in-delay-1">
-                    <div style="background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%); color: #ffffff; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 20px; letter-spacing: 0.5px;">FOUNDER'S PRICING</div>
+                    <div class="founder-badge">FOUNDER'S PRICING</div>
                     
                     <h3 class="pricing-name">Social Dominator</h3>
                     <p class="pricing-tagline">Complete digital presence across all platforms</p>
                     
-                    <div style="text-decoration: line-through; color: #999; font-size: 16px; text-align: center; margin: 16px 0 8px;">$1,800</div>
+                    <div class="strike text-gray-light text-md text-center mt-md mb-sm">$1,800</div>
                     <div class="pricing-price">$850<span class="pricing-period">/month</span></div>
-                    <div style="text-align: center; color: #666; font-size: 14px; margin-bottom: 24px;">
-                        + $300 implementation fee <span style="color: #999; text-decoration: line-through;">(reg. $600)</span>
+                    <div class="text-center text-gray text-sm mb-lg">
+                        + $300 implementation fee <span class="strike text-gray-light">(reg. $600)</span>
                     </div>
                     
-                    <div style="margin: 24px 0;">
-                        <div style="display: flex; gap: 16px; margin-bottom: 16px; padding: 12px; background: #fff8f0; border-radius: 8px;">
-                            <div style="font-size: 24px;">🚀</div>
+                    <div class="mt-lg mb-lg">
+                        <div class="feature-highlight-box-cream">
+                            <div class="icon-sm">🚀</div>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">3 Posts Per Week</div>
-                                <div style="font-size: 13px; color: #666;">156 pieces of content annually</div>
+                                <div class="font-semibold text-sm mb-sm">3 Posts Per Week</div>
+                                <div class="text-sm text-gray">156 pieces of content annually</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 16px; margin-bottom: 16px; padding: 12px; background: #fff8f0; border-radius: 8px;">
-                            <div style="font-size: 24px;">🌐</div>
+                        <div class="feature-highlight-box-cream">
+                            <div class="icon-sm">🌐</div>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">All Major Platforms</div>
-                                <div style="font-size: 13px; color: #666;">Google, Facebook, Instagram, YouTube, TikTok, LinkedIn, Email</div>
+                                <div class="font-semibold text-sm mb-sm">All Major Platforms</div>
+                                <div class="text-sm text-gray">Google, Facebook, Instagram, YouTube, TikTok, LinkedIn, Email</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 16px; padding: 12px; background: #fff8f0; border-radius: 8px;">
-                            <div style="font-size: 24px;">💎</div>
+                        <div class="feature-highlight-box-cream">
+                            <div class="icon-sm">💎</div>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Exclusive Features</div>
-                                <div style="font-size: 13px; color: #666;">Link-in-bio page & advanced strategy</div>
+                                <div class="font-semibold text-sm mb-sm">Exclusive Features</div>
+                                <div class="text-sm text-gray">Link-in-bio page & advanced strategy</div>
                             </div>
                         </div>
                     </div>
@@ -235,17 +175,17 @@
                         </div>
                     </div>
                     
-                    <div style="font-style: italic; color: #2a4a5c; font-size: 14px; margin: 16px 0; padding: 16px; background: #fff8f0; border-radius: 8px; text-align: center;">
+                    <div class="italic text-teal text-sm mt-md mb-md p-md bg-cream rounded text-center">
                         ⏱️ Your time: 10-20 minutes/week capturing content
                     </div>
                     
-                    <a href="tel:5673338779" class="btn btn-primary" style="width: 100%;">Get Started: (567) 333-8779</a>
+                    <a href="tel:5673338779" class="btn btn-primary w-full">Get Started: (567) 333-8779</a>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 48px; padding: 32px; background: #ffffff; border-radius: 12px; max-width: 700px; margin-left: auto; margin-right: auto; border: 2px solid #f7931e;">
-                <p style="font-size: 18px; color: #1a1a1a; font-weight: 600; margin-bottom: 12px;">⚡ Founder's Pricing Ends Soon</p>
-                <p style="font-size: 15px; color: #2a4a5c;">This special pricing is limited to our first 50 clients only. Lock in your rate now - once we're full, pricing moves to standard rates ($1,200/$1,800 monthly).</p>
+            <div class="text-center mt-xl p-lg bg-white rounded-lg max-w-700 border-orange">
+                <p class="text-lg text-black font-semibold mb-sm">⚡ Founder's Pricing Ends Soon</p>
+                <p class="text-md text-teal">This special pricing is limited to our first 50 clients only. Lock in your rate now - once we're full, pricing moves to standard rates ($1,200/$1,800 monthly).</p>
             </div>
         </div>
     </section>
