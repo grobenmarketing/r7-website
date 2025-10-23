@@ -15,18 +15,33 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html" class="nav-brand">R7 Creative</a>
+                <img src="img/r7creative-logo.png" alt="R7 Creative">
             </div>
+
+            <div class="nav-column">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown-menu-item">
+                        <a href="how-it-works.html" class="nav-link">
+                            How It Works 
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="results.html" class="nav-link">Results</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="media.html" class="nav-link active">Media</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="nav-cta-button">Get Started</a>
+            </div>
+
             <button class="nav-toggle" onclick="toggleMenu()">☰</button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
-                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li><a href="results.html" class="nav-link">Results</a></li>
-                <li><a href="media.html" class="nav-link active">Media</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
         </div>
     </nav>
 
