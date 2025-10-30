@@ -492,6 +492,305 @@ body {
     line-height: 1.4;
 }
 
+/* Pricing Section (Pricing Page) */
+.pricing-section {
+    padding: 80px 0;
+    background: #e8e5d4;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #bdc3c7;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(42, 74, 92, 0.15);
+}
+
+.pricing-card.popular {
+    border: 3px solid #f7931e;
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(247, 147, 30, 0.25);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f7931e;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.founder-badge {
+    background: #2a4a5c;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.package-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.package-tagline {
+    color: #2a4a5c;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 48px;
+}
+
+.regular-price {
+    font-size: 22px;
+    color: #bdc3c7;
+    text-decoration: line-through;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 56px;
+    font-weight: 700;
+    color: #cf071d;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.price-period {
+    font-size: 18px;
+    color: #2a4a5c;
+}
+
+.implementation-fee {
+    font-size: 15px;
+    color: #2a4a5c;
+    margin-top: 12px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid #e8e5d4;
+}
+
+.implementation-fee .strike {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.key-highlights {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.highlight-item:hover {
+    background: #fff8f0;
+    transform: translateX(4px);
+}
+
+.highlight-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.highlight-content {
+    flex: 1;
+    text-align: left;
+}
+
+.highlight-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+.highlight-description {
+    font-size: 14px;
+    color: #2a4a5c;
+    line-height: 1.4;
+}
+
+.expand-features {
+    background: #f7931e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 16px 0 24px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.expand-features:hover {
+    background: #cf071d;
+    transform: translateY(-2px);
+}
+
+.expand-icon {
+    transition: transform 0.3s ease;
+}
+
+.expand-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.full-feature-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    text-align: left;
+}
+
+.full-feature-list.expanded {
+    max-height: 1000px;
+}
+
+.feature-section {
+    margin-bottom: 24px;
+}
+
+.feature-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f7931e;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #2a4a5c;
+    line-height: 1.5;
+}
+
+.feature-item::before {
+    content: '✓';
+    color: #f7931e;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.time-investment {
+    font-style: italic;
+    color: #2a4a5c;
+    font-size: 14px;
+    margin: 16px 0 24px;
+    padding: 16px;
+    background: #fff8f0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pricing-cta {
+    display: block;
+    background: #f7931e;
+    color: #ffffff;
+    padding: 18px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+.pricing-cta:hover {
+    background: #cf071d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(247, 147, 30, 0.25);
+}
+
+.urgency-box {
+    text-align: center;
+    margin-top: 48px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 12px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #f7931e;
+}
+
+.urgency-title {
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.urgency-text {
+    font-size: 15px;
+    color: #2a4a5c;
+    line-height: 1.6;
+}
+
+.cta-phone {
+    font-size: 48px;
+    font-weight: 700;
+    color: #f7931e;
+    text-decoration: none;
+    display: block;
+    margin: 32px 0;
+    letter-spacing: -0.02em;
+}
+
+.cta-phone:hover {
+    color: #cf071d;
+}
+
 .components-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -744,6 +1043,51 @@ body {
     color: #bdc3c7; /* Brushed Metal */
     font-size: 14px;
     line-height: 1.4;
+}
+
+/* Process Section (How It Works Page) */
+.process-section {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.process-flow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    margin-bottom: 64px;
+}
+
+.process-flow .process-step {
+    text-align: center;
+    position: relative;
+}
+
+.process-flow .step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f7931e, #cf071d);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 auto 24px;
+}
+
+.process-flow .process-step h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.process-flow .process-step p {
+    color: #2a4a5c;
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 /* Story Section (About Page) */
@@ -1110,13 +1454,26 @@ body {
 .fade-in:nth-child(3) { animation-delay: 0.3s; }
 .fade-in:nth-child(4) { animation-delay: 0.4s; }
 
+/* Hero content animations (How It Works page) */
+.hero-content > * {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-content > *:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero-content > *:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
     }
 
-    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section {
+    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section, .process-section, .pricing-section {
         padding: 80px 0;
     }
 
@@ -1146,8 +1503,16 @@ body {
         margin-bottom: 60px;
     }
 
-    .process-steps, .components-grid, .before-after-grid, .benefits-grid, .results-grid, .philosophy-grid, .comparison-grid, .team-grid {
+    .process-steps, .process-flow, .components-grid, .before-after-grid, .benefits-grid, .results-grid, .philosophy-grid, .comparison-grid, .team-grid, .pricing-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pricing-card.popular {
+        transform: none;
+    }
+
+    .price {
+        font-size: 48px;
     }
 
     .content-list {

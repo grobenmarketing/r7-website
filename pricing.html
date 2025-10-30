@@ -1,639 +1,237 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.6;
-        color: #1a1a1a;
-        background: #ffffff;
-        font-size: 16px;
-        letter-spacing: -0.01em;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-    }
-
-    .full-width {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-    }
-
-    .hero {
-        padding: 120px 0 80px;
-        text-align: center;
-        background: linear-gradient(180deg, #ffffff 0%, #e8e5d4 100%);
-    }
-
-    .hero h1 {
-        font-size: clamp(48px, 6vw, 72px);
-        font-weight: 700;
-        line-height: 1.1;
-        margin-bottom: 24px;
-        letter-spacing: -0.02em;
-        color: #1a1a1a;
-    }
-
-    .hero-highlight {
-        background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-        color: #2a4a5c;
-        margin-bottom: 24px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        font-weight: 400;
-    }
-
-    .hero-tagline {
-        font-size: 16px;
-        color: #2a4a5c;
-        font-style: italic;
-        margin-bottom: 48px;
-        font-weight: 500;
-        border-top: 1px solid #bdc3c7;
-        padding-top: 24px;
-        margin-top: 24px;
-    }
-
-    .pricing-section {
-        padding: 80px 0;
-        background: #e8e5d4;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 48px;
-    }
-
-    .section-header h2 {
-        font-size: 36px;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 8px;
-    }
-
-    .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 32px;
-        margin-top: 48px;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .pricing-card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 40px;
-        text-align: center;
-        border: 2px solid #bdc3c7;
-        position: relative;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .pricing-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(42, 74, 92, 0.15);
-    }
-
-    .pricing-card.popular {
-        border: 3px solid #f7931e;
-        transform: scale(1.02);
-        box-shadow: 0 15px 40px rgba(247, 147, 30, 0.25);
-    }
-
-    .popular-badge {
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #f7931e;
-        color: #ffffff;
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .founder-badge {
-        background: #2a4a5c;
-        color: #ffffff;
-        padding: 6px 16px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-        display: inline-block;
-        margin-bottom: 16px;
-    }
-
-    .package-name {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        color: #1a1a1a;
-    }
-
-    .package-tagline {
-        color: #2a4a5c;
-        margin-bottom: 32px;
-        font-size: 16px;
-        line-height: 1.5;
-        min-height: 48px;
-    }
-
-    .regular-price {
-        font-size: 22px;
-        color: #bdc3c7;
-        text-decoration: line-through;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
-
-    .price {
-        font-size: 56px;
-        font-weight: 700;
-        color: #cf071d;
-        margin-bottom: 8px;
-        line-height: 1;
-    }
-
-    .price-period {
-        font-size: 18px;
-        color: #2a4a5c;
-    }
-
-    .implementation-fee {
-        font-size: 15px;
-        color: #2a4a5c;
-        margin-top: 12px;
-        margin-bottom: 32px;
-        padding-bottom: 32px;
-        border-bottom: 2px solid #e8e5d4;
-    }
-
-    .implementation-fee .strike {
-        text-decoration: line-through;
-        opacity: 0.6;
-    }
-
-    .key-highlights {
-        text-align: left;
-        margin-bottom: 24px;
-    }
-
-    .highlight-item {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 16px;
-        padding: 16px;
-        background: #f8f9fa;
-        border-radius: 12px;
-        transition: all 0.2s ease;
-    }
-
-    .highlight-item:hover {
-        background: #fff8f0;
-        transform: translateX(4px);
-    }
-
-    .highlight-icon {
-        font-size: 32px;
-        flex-shrink: 0;
-    }
-
-    .highlight-content {
-        flex: 1;
-        text-align: left;
-    }
-
-    .highlight-title {
-        font-size: 17px;
-        font-weight: 600;
-        color: #1a1a1a;
-        margin-bottom: 2px;
-    }
-
-    .highlight-description {
-        font-size: 14px;
-        color: #2a4a5c;
-        line-height: 1.4;
-    }
-
-    .expand-features {
-        background: #f7931e;
-        color: #ffffff;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        margin: 16px 0 24px;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-    }
-
-    .expand-features:hover {
-        background: #cf071d;
-        transform: translateY(-2px);
-    }
-
-    .expand-icon {
-        transition: transform 0.3s ease;
-    }
-
-    .expand-icon.rotated {
-        transform: rotate(180deg);
-    }
-
-    .full-feature-list {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-        text-align: left;
-    }
-
-    .full-feature-list.expanded {
-        max-height: 1000px;
-    }
-
-    .feature-section {
-        margin-bottom: 24px;
-    }
-
-    .feature-section-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: #f7931e;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .feature-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        margin-bottom: 10px;
-        font-size: 14px;
-        color: #2a4a5c;
-        line-height: 1.5;
-    }
-
-    .feature-item::before {
-        content: '✓';
-        color: #f7931e;
-        font-weight: 600;
-        flex-shrink: 0;
-    }
-
-    .time-investment {
-        font-style: italic;
-        color: #2a4a5c;
-        font-size: 14px;
-        margin: 16px 0 24px;
-        padding: 16px;
-        background: #fff8f0;
-        border-radius: 8px;
-        text-align: center;
-    }
-
-    .pricing-cta {
-        display: block;
-        background: #f7931e;
-        color: #ffffff;
-        padding: 18px 32px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 17px;
-        transition: all 0.2s ease;
-        margin-top: auto;
-    }
-
-    .pricing-cta:hover {
-        background: #cf071d;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(247, 147, 30, 0.25);
-    }
-
-    .urgency-box {
-        text-align: center;
-        margin-top: 48px;
-        padding: 32px;
-        background: #ffffff;
-        border-radius: 12px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        border: 2px solid #f7931e;
-    }
-
-    .urgency-title {
-        font-size: 18px;
-        color: #1a1a1a;
-        font-weight: 600;
-        margin-bottom: 12px;
-    }
-
-    .urgency-text {
-        font-size: 15px;
-        color: #2a4a5c;
-        line-height: 1.6;
-    }
-
-    .cta-section {
-        padding: 120px 0;
-        background: #1a1a1a;
-        color: #ffffff;
-        text-align: center;
-    }
-
-    .cta-title {
-        font-size: 40px;
-        font-weight: 700;
-        margin-bottom: 16px;
-        letter-spacing: -0.02em;
-        color: #ffffff;
-    }
-
-    .cta-phone {
-        font-size: 48px;
-        font-weight: 700;
-        color: #f7931e;
-        text-decoration: none;
-        display: block;
-        margin: 32px 0;
-        letter-spacing: -0.02em;
-    }
-
-    .cta-phone:hover {
-        color: #cf071d;
-    }
-
-    @media (max-width: 768px) {
-        .container {
-            padding: 0 20px;
-        }
-
-        .hero, .pricing-section, .cta-section {
-            padding: 60px 0;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-        }
-
-        .pricing-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        .pricing-card.popular {
-            transform: none;
-        }
-
-        .cta-phone {
-            font-size: 32px;
-        }
-
-        .price {
-            font-size: 48px;
-        }
-    }
-</style>
-
-<!-- Hero Section -->
-<section class="hero full-width">
-    <div class="container">
-        <h1>Stop Losing <span class="hero-highlight">Phone Calls</span> to Competitors</h1>
-        <p class="hero-subtitle">Every month, more than 51 potential customers eliminate your business in browser tabs. The investment to fix this is less than losing one good customer.</p>
-        <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
-    </div>
-</section>
-
-<!-- Pricing Section -->
-<section class="pricing-section full-width">
-    <div class="container">
-        <div class="section-header">
-            <h2>Founder's Pricing - Limited to First 50 Clients</h2>
-        </div>
-        
-        <div class="pricing-grid">
-            <!-- 4-Minute Winner -->
-            <div class="pricing-card">
-                <div class="founder-badge">FOUNDER'S PRICING</div>
-                
-                <h3 class="package-name">4-Minute Winner</h3>
-                <p class="package-tagline">Perfect for businesses ready to dominate Google Business Search</p>
-                
-                <div class="regular-price">$1,200</div>
-                <div class="price">$550<span class="price-period">/month</span></div>
-                <div class="implementation-fee">
-                    + $300 implementation fee <span class="strike">(reg. $600)</span>
-                </div>
-                
-                <div class="key-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">📱</div>
-                        <div class="highlight-content">
-                            <div class="highlight-title">2 Posts Per Week</div>
-                            <div class="highlight-description">104 pieces of content annually</div>
-                        </div>
-                    </div>
-                    
-                    <div class="highlight-item">
-                        <div class="highlight-icon">🎯</div>
-                        <div class="highlight-content">
-                            <div class="highlight-title">Google Business Only</div>
-                            <div class="highlight-description">Where local customers make decisions</div>
-                        </div>
-                    </div>
-                    
-                    <div class="highlight-item">
-                        <div class="highlight-icon">📊</div>
-                        <div class="highlight-content">
-                            <div class="highlight-title">Performance Tracking</div>
-                            <div class="highlight-description">Monthly analytics & insights</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="expand-features" onclick="toggleFeatures('winner')">
-                    See Full Feature List
-                    <span class="expand-icon" id="winner-icon">▼</span>
-                </button>
-                
-                <div class="full-feature-list" id="winner-features">
-                    <div class="feature-section">
-                        <div class="feature-section-title">Content Posting</div>
-                        <div class="feature-item">2 posts per week (104 pieces annually)</div>
-                        <div class="feature-item">Google Business Profile only</div>
-                    </div>
-                    
-                    <div class="feature-section">
-                        <div class="feature-section-title">Content & Creation</div>
-                        <div class="feature-item">Content planning with assigned capture dates</div>
-                        <div class="feature-item">Professional editing, captions, and scheduling</div>
-                        <div class="feature-item">Strategic brand voice development</div>
-                        <div class="feature-item">Asset library - we save and repurpose your best content</div>
-                    </div>
-                    
-                    <div class="feature-section">
-                        <div class="feature-section-title">Support & Analytics</div>
-                        <div class="feature-item">Bi-weekly strategy calls to plan content</div>
-                        <div class="feature-item">Monthly performance analytics</div>
-                        <div class="feature-item">Engagement management</div>
-                        <div class="feature-item">Google Business Profile optimization</div>
-                    </div>
-                </div>
-                
-                <div class="time-investment">
-                    ⏱️ Your time: 10-20 minutes/week capturing content
-                </div>
-                
-                <a href="tel:5673338779" class="pricing-cta">Get Started: 567-333-8779</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - R7 Creative</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/r7creative-logo.png" alt="R7 Creative">
             </div>
 
-            <!-- 4-Minute Dominator -->
-            <div class="pricing-card popular">
-                <div class="popular-badge">MOST POPULAR</div>
-                <div class="founder-badge" style="margin-top: 12px;">FOUNDER'S PRICING</div>
-                
-                <h3 class="package-name">4-Minute Dominator</h3>
-                <p class="package-tagline">Everything in Winner PLUS full social media domination</p>
-                
-                <div class="regular-price">$1,800</div>
-                <div class="price">$950<span class="price-period">/month</span></div>
-                <div class="implementation-fee">
-                    + $300 implementation fee <span class="strike">(reg. $600)</span>
-                </div>
-                
-                <div class="key-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">🚀</div>
-                        <div class="highlight-content">
-                            <div class="highlight-title">3 Posts Per Week</div>
-                            <div class="highlight-description">156 pieces of content annually</div>
+            <div class="nav-column" id="navColumn">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown-menu-item">
+                        <a href="how-it-works.html" class="nav-link">
+                            How It Works
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="results.html" class="nav-link">Results</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                    <li><a href="media.html" class="nav-link">Media</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="nav-cta-button">Get Started</a>
+            </div>
+
+            <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <h1>Stop Losing <span class="hero-highlight">Phone Calls</span> to Competitors</h1>
+            <p class="hero-subtitle">Every month, more than 51 potential customers eliminate your business in browser tabs. The investment to fix this is less than losing one good customer.</p>
+            <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2>Founder's Pricing - Limited to First 50 Clients</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- 4-Minute Winner -->
+                <div class="pricing-card">
+                    <div class="founder-badge">FOUNDER'S PRICING</div>
+
+                    <h3 class="package-name">4-Minute Winner</h3>
+                    <p class="package-tagline">Perfect for businesses ready to dominate Google Business Search</p>
+
+                    <div class="regular-price">$1,200</div>
+                    <div class="price">$550<span class="price-period">/month</span></div>
+                    <div class="implementation-fee">
+                        + $300 implementation fee <span class="strike">(reg. $600)</span>
+                    </div>
+
+                    <div class="key-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">📱</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">2 Posts Per Week</div>
+                                <div class="highlight-description">104 pieces of content annually</div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">Google Business Only</div>
+                                <div class="highlight-description">Where local customers make decisions</div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">📊</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">Performance Tracking</div>
+                                <div class="highlight-description">Monthly analytics & insights</div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="highlight-item">
-                        <div class="highlight-icon">🌐</div>
-                        <div class="highlight-content">
-                            <div class="highlight-title">ALL Platforms</div>
-                            <div class="highlight-description">Google, Facebook, Instagram & more</div>
+
+                    <button class="expand-features" onclick="toggleFeatures('winner')">
+                        See Full Feature List
+                        <span class="expand-icon" id="winner-icon">▼</span>
+                    </button>
+
+                    <div class="full-feature-list" id="winner-features">
+                        <div class="feature-section">
+                            <div class="feature-section-title">Content Posting</div>
+                            <div class="feature-item">2 posts per week (104 pieces annually)</div>
+                            <div class="feature-item">Google Business Profile only</div>
+                        </div>
+
+                        <div class="feature-section">
+                            <div class="feature-section-title">Content & Creation</div>
+                            <div class="feature-item">Content planning with assigned capture dates</div>
+                            <div class="feature-item">Professional editing, captions, and scheduling</div>
+                            <div class="feature-item">Strategic brand voice development</div>
+                            <div class="feature-item">Asset library - we save and repurpose your best content</div>
+                        </div>
+
+                        <div class="feature-section">
+                            <div class="feature-section-title">Support & Analytics</div>
+                            <div class="feature-item">Bi-weekly strategy calls to plan content</div>
+                            <div class="feature-item">Monthly performance analytics</div>
+                            <div class="feature-item">Engagement management</div>
+                            <div class="feature-item">Google Business Profile optimization</div>
                         </div>
                     </div>
-                    
-                    <div class="highlight-item">
-                        <div class="highlight-icon">📊</div>
-                        <div class="highlight-content">
-                            <div class="highlight-title">Advanced Analytics</div>
-                            <div class="highlight-description">Deep performance insights across all channels</div>
+
+                    <div class="time-investment">
+                        ⏱️ Your time: 10-20 minutes/week capturing content
+                    </div>
+
+                    <a href="tel:5673338779" class="pricing-cta">Get Started: 567-333-8779</a>
+                </div>
+
+                <!-- 4-Minute Dominator -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="founder-badge" style="margin-top: 12px;">FOUNDER'S PRICING</div>
+
+                    <h3 class="package-name">4-Minute Dominator</h3>
+                    <p class="package-tagline">Everything in Winner PLUS full social media domination</p>
+
+                    <div class="regular-price">$1,800</div>
+                    <div class="price">$950<span class="price-period">/month</span></div>
+                    <div class="implementation-fee">
+                        + $300 implementation fee <span class="strike">(reg. $600)</span>
+                    </div>
+
+                    <div class="key-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚀</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">3 Posts Per Week</div>
+                                <div class="highlight-description">156 pieces of content annually</div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🌐</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">ALL Platforms</div>
+                                <div class="highlight-description">Google, Facebook, Instagram & more</div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">📊</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">Advanced Analytics</div>
+                                <div class="highlight-description">Deep performance insights across all channels</div>
+                            </div>
                         </div>
                     </div>
+
+                    <button class="expand-features" onclick="toggleFeatures('dominator')">
+                        See Full Feature List
+                        <span class="expand-icon" id="dominator-icon">▼</span>
+                    </button>
+
+                    <div class="full-feature-list" id="dominator-features">
+                        <div class="feature-section">
+                            <div class="feature-section-title">Content Posting</div>
+                            <div class="feature-item">3 posts per week (156 pieces annually)</div>
+                            <div class="feature-item">ALL platforms: Google Business, Facebook, Instagram & more</div>
+                        </div>
+
+                        <div class="feature-section">
+                            <div class="feature-section-title">Content & Creation</div>
+                            <div class="feature-item">Content planning with assigned capture dates</div>
+                            <div class="feature-item">Professional editing, captions, and scheduling</div>
+                            <div class="feature-item">Strategic brand voice development</div>
+                            <div class="feature-item">Asset library - we save and repurpose your best content</div>
+                            <div class="feature-item">Advanced social media strategy coordinated across platforms</div>
+                        </div>
+
+                        <div class="feature-section">
+                            <div class="feature-section-title">Support & Analytics</div>
+                            <div class="feature-item">Bi-weekly strategy calls to plan content</div>
+                            <div class="feature-item">Monthly performance analytics</div>
+                            <div class="feature-item">Quarterly strategy sessions for deep dives</div>
+                            <div class="feature-item">Engagement management</div>
+                            <div class="feature-item">Profile optimization across all platforms</div>
+                        </div>
+
+                        <div class="feature-section">
+                            <div class="feature-section-title">Exclusive Features</div>
+                            <div class="feature-item">Link-in-bio page - mobile-optimized conversion hub</div>
+                        </div>
+                    </div>
+
+                    <div class="time-investment">
+                        ⏱️ Your time: 10-20 minutes/week capturing content
+                    </div>
+
+                    <a href="tel:5673338779" class="pricing-cta">Get Started: 567-333-8779</a>
                 </div>
-                
-                <button class="expand-features" onclick="toggleFeatures('dominator')">
-                    See Full Feature List
-                    <span class="expand-icon" id="dominator-icon">▼</span>
-                </button>
-                
-                <div class="full-feature-list" id="dominator-features">
-                    <div class="feature-section">
-                        <div class="feature-section-title">Content Posting</div>
-                        <div class="feature-item">3 posts per week (156 pieces annually)</div>
-                        <div class="feature-item">ALL platforms: Google Business, Facebook, Instagram & more</div>
-                    </div>
-                    
-                    <div class="feature-section">
-                        <div class="feature-section-title">Content & Creation</div>
-                        <div class="feature-item">Content planning with assigned capture dates</div>
-                        <div class="feature-item">Professional editing, captions, and scheduling</div>
-                        <div class="feature-item">Strategic brand voice development</div>
-                        <div class="feature-item">Asset library - we save and repurpose your best content</div>
-                        <div class="feature-item">Advanced social media strategy coordinated across platforms</div>
-                    </div>
-                    
-                    <div class="feature-section">
-                        <div class="feature-section-title">Support & Analytics</div>
-                        <div class="feature-item">Bi-weekly strategy calls to plan content</div>
-                        <div class="feature-item">Monthly performance analytics</div>
-                        <div class="feature-item">Quarterly strategy sessions for deep dives</div>
-                        <div class="feature-item">Engagement management</div>
-                        <div class="feature-item">Profile optimization across all platforms</div>
-                    </div>
-                    
-                    <div class="feature-section">
-                        <div class="feature-section-title">Exclusive Features</div>
-                        <div class="feature-item">Link-in-bio page - mobile-optimized conversion hub</div>
-                    </div>
-                </div>
-                
-                <div class="time-investment">
-                    ⏱️ Your time: 10-20 minutes/week capturing content
-                </div>
-                
-                <a href="tel:5673338779" class="pricing-cta">Get Started: 567-333-8779</a>
+            </div>
+
+            <div class="urgency-box">
+                <p class="urgency-title">⚡ Founder's Pricing Ends Soon</p>
+                <p class="urgency-text">This special pricing is limited to our first 50 clients only. Lock in your rate now - once we're full, pricing moves to standard rates ($1,200/$1,800 monthly).</p>
             </div>
         </div>
-        
-        <div class="urgency-box">
-            <p class="urgency-title">⚡ Founder's Pricing Ends Soon</p>
-            <p class="urgency-text">This special pricing is limited to our first 50 clients only. Lock in your rate now - once we're full, pricing moves to standard rates ($1,200/$1,800 monthly).</p>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <h2 class="cta-title">Ready to Stop Losing Those Phone Calls?</h2>
+            <a href="tel:5673338779" class="cta-phone">(567) 333-8779</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Final CTA -->
-<section class="cta-section full-width">
-    <div class="container">
-        <h2 class="cta-title">Ready to Stop Losing Those Phone Calls?</h2>
-        <a href="tel:5673338779" class="cta-phone">(567) 333-8779</a>
-    </div>
-</section>
-
-<script>
-function toggleFeatures(packageType) {
-    const features = document.getElementById(packageType + '-features');
-    const icon = document.getElementById(packageType + '-icon');
-    
-    features.classList.toggle('expanded');
-    icon.classList.toggle('rotated');
-}
-</script>
+    <script src="script.js"></script>
+</body>
+</html>
