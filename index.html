@@ -3,180 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Only</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        /* NAVIGATION */
-        .nav {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1170px;
-            margin: 0 auto;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /* Logo Column */
-        .nav-logo {
-            width: 135px;
-            flex-shrink: 0;
-        }
-
-        .nav-logo img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* Navigation Column (Center) */
-        .nav-column {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 16px;
-            font-weight: 500;
-            align-items: center;
-        }
-
-        .nav-menu > li {
-            padding: 8px;
-            position: relative;
-        }
-
-        .nav-link {
-            color: #1a1a1a;
-            text-decoration: none;
-            padding: 8px 16px;
-            transition: color 0.2s ease;
-            display: inline-block;
-        }
-
-        .nav-link:hover {
-            color: #cf071d;
-        }
-
-        .nav-link.active {
-            color: #cf071d;
-        }
-
-        /* Dropdown Menu */
-        .dropdown-menu-item {
-            cursor: pointer;
-        }
-
-        .dropdown-icon {
-            font-size: 10px;
-            margin-left: 4px;
-            transition: transform 0.2s ease;
-        }
-
-        .dropdown-menu-item:hover .dropdown-icon {
-            transform: rotate(180deg);
-        }
-
-        .submenu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            list-style: none;
-            padding: 0;
-            margin-top: 5px;
-            background-color: #ffffff;
-            border: 1px solid #1a1a1a;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-            min-width: 150px;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease, visibility 0s 0.3s;
-            z-index: 100;
-        }
-
-        .dropdown-menu-item:hover .submenu {
-            visibility: visible;
-            opacity: 1;
-            transition-delay: 0s;
-        }
-
-        .submenu li {
-            padding: 0;
-        }
-
-        .submenu .nav-link {
-            display: block;
-            padding: 10px 16px;
-            width: 100%;
-        }
-
-        .submenu .nav-link:hover {
-            background-color: #1a1a1a;
-            color: #ffffff;
-        }
-
-        /* CTA Column (Right) */
-        .nav-cta {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            min-width: 150px;
-            flex-shrink: 0;
-        }
-
-        .nav-cta-button {
-            background: #dc2626;
-            color: #ffffff;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .nav-cta-button:hover {
-            background: #b91c1c;
-            transform: scale(1.05);
-        }
-
-        /* Mobile Toggle */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #1a1a1a;
-        }
-    </style>
+    <title>R7 Creative - Win the 4-Minute Decision</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -212,5 +40,311 @@
             <button class="nav-toggle" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <div class="hero-badge">Results as a Service</div>
+
+            <h1>Win the <span class="hero-highlight">4-Minute Decision</span></h1>
+
+            <p class="hero-subtitle">More Calls From Local Business Searches</p>
+
+            <p class="hero-body">80% of local businesses hang 'Gone Fishing' signs on their digital doors, missing out on steady revenue when they look closed online. Don't be one of them.</p>
+
+            <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">15-30%</span>
+                    <span class="stat-label">Less Price Resistance</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25-50%</span>
+                    <span class="stat-label">More Phone Calls</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">35-70%</span>
+                    <span class="stat-label">More Website Clicks</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Win More 4-Minute Decisions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section full-width" id="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">THE 4-MINUTE MARKETING SYSTEM</h2>
+                <p class="section-subtitle">The clock is ticking. John's boss drops an emergency project. He opens Google Maps, searches for contractors.</p>
+            </div>
+
+            <div class="story-timeline">
+                <div class="story-step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>11:56 AM - The Search Begins</h3>
+                        <p>John's boss drops an emergency project. He opens Google Maps, searches for contractors. The clock is ticking.</p>
+                    </div>
+                </div>
+
+                <div class="story-step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>The Instant Elimination</h3>
+                        <p>Three businesses get <span class="highlight-text">eliminated immediately</span>: No recent photos, old reviews, incomplete profiles.</p>
+                    </div>
+                </div>
+
+                <div class="story-step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>The Final Test</h3>
+                        <p>Two remain. He checks social media. One looks dead - <span class="highlight-text">tab closed, never called</span>.</p>
+                    </div>
+                </div>
+
+                <div class="story-step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>The Winner</h3>
+                        <p>The other has recent videos, fresh reviews. <span class="highlight-text">He calls. He books. Game over.</span> A new customer is won.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="solution-intro">
+                <h2 class="solution-tagline">Our Solution: You Capture, We Create</h2>
+                <p class="solution-description">We handle ALL the difficult parts.</p>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Planning Calls</h3>
+                        <p class="process-description">Twice per month we spend 15 minutes planning your next 6-8 content pieces with capture dates assigned.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">You Capture</h3>
+                        <p class="process-description">Take 10-20 minutes per week to film or photo what we planned using your phone at your location. Upload via form. You're done!</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">We Create</h3>
+                        <p class="process-description">Professional editing, captions, and scheduling turn your captures into polished content on Google Business Search and social media.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">Content Goes Live</h3>
+                        <p class="process-description">Your authentic business stories post automatically across your platforms. We monitor its performance and update your content strategy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">The 9 Components of 4-Minute Marketing</h2>
+            </div>
+
+            <div class="components-grid">
+                <div class="component-card fade-in">
+                    <div class="component-number">1</div>
+                    <h3 class="component-title">You Capture, We Create</h3>
+                    <p class="component-description">2 professionally edited videos + 1 additional post weekly that build trust with potential customers.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">2</div>
+                    <h3 class="component-title">Fresh Evidence</h3>
+                    <p class="component-description">156 pieces of professional content per year, across Google Business & all major platforms.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">3</div>
+                    <h3 class="component-title">Brand Pillars</h3>
+                    <p class="component-description">A clear framework for your message: ideal customer, core offer, and unique value.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">4</div>
+                    <h3 class="component-title">Asset Library</h3>
+                    <p class="component-description">We repurpose every piece of content for maximum value and long-term use.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">5</div>
+                    <h3 class="component-title">Social Engagement</h3>
+                    <p class="component-description">Human responses to reviews, comments, and messages across your platforms.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">6</div>
+                    <h3 class="component-title">Review Generation</h3>
+                    <p class="component-description">A proven system to build fresh, positive reviews. Training provided, coaching available.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">7</div>
+                    <h3 class="component-title">Platform Optimization</h3>
+                    <p class="component-description">Professional setup and consistent branding across Google Business, Facebook, Instagram, and more.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">8</div>
+                    <h3 class="component-title">Link-in-Bio</h3>
+                    <p class="component-description">A mobile-optimized page that showcases your links and turns traffic into inquiries.</p>
+                </div>
+
+                <div class="component-card fade-in">
+                    <div class="component-number">9</div>
+                    <h3 class="component-title">Strategy Sessions</h3>
+                    <p class="component-description">2x/mo for 15 minutes we plan your next 6-8 content pieces with capture dates assigned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get More Business</h2>
+                <p class="section-subtitle">Professional content that proves you're actively serving customers when it matters most</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✓</div>
+                    <p class="benefit-text">More phone calls and quote requests</p>
+                </div>
+
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✓</div>
+                    <p class="benefit-text">Faster "yes" decisions from prospects</p>
+                </div>
+
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✓</div>
+                    <p class="benefit-text">Increased referrals and word of mouth</p>
+                </div>
+
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✓</div>
+                    <p class="benefit-text">Higher quote acceptance rates</p>
+                </div>
+            </div>
+
+            <div class="content-types">
+                <h3>Content We'll Create</h3>
+                <div class="content-list">
+                    <div class="content-item">Behind-the-scenes work</div>
+                    <div class="content-item">Customer success stories</div>
+                    <div class="content-item">Team introductions</div>
+                    <div class="content-item">Before/after reveals</div>
+                    <div class="content-item">Process demonstrations</div>
+                    <div class="content-item">Tips and expertise</div>
+                    <div class="content-item">Community involvement</div>
+                    <div class="content-item">Equipment spotlights</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study-section full-width">
+        <div class="container">
+            <div class="case-study-header">
+                <h2 class="case-study-title">From Browser Tab Elimination to Phone Calls</h2>
+                <p class="case-study-subtitle">Our clients go from being among the 3 who get eliminated to being one of the 2 who get called</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3 class="case-study-card-title">Real Client Results: Local Solar Company</h3>
+
+                <div class="before-after-grid">
+                    <div class="before-section">
+                        <h4>Before R7</h4>
+                        <ul class="result-list">
+                            <li>Last social media post: 6 months ago</li>
+                            <li>Generic stock photos</li>
+                            <li>1-2 leads per week</li>
+                            <li>20% appointment show up rate</li>
+                        </ul>
+                    </div>
+
+                    <div class="after-section">
+                        <h4>After 60 Days</h4>
+                        <ul class="result-list">
+                            <li>Fresh installation photos weekly</li>
+                            <li>Authentic customer testimonials</li>
+                            <li>4-6 leads per week</li>
+                            <li>60% appointment show up rate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    "We were getting too many appointment cancelations. After we fixed our search presence, the growth was unbelievable." - Alan, Marketing Director
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-stat fade-in">
+                    <div class="result-icon phone">📞</div>
+                    <span class="result-number">15-30%</span>
+                    <div class="result-label">Less Price Resistance</div>
+                    <p class="result-description">Customers trust you more when they see consistent, professional activity</p>
+                </div>
+
+                <div class="result-stat fade-in">
+                    <div class="result-icon speed">⚡</div>
+                    <span class="result-number">25-50%</span>
+                    <div class="result-label">More Phone Calls</div>
+                    <p class="result-description">Fresh content keeps you visible during 4-minute customer decisions</p>
+                </div>
+
+                <div class="result-stat fade-in">
+                    <div class="result-icon referral">🔔</div>
+                    <span class="result-number">35-70%</span>
+                    <div class="result-label">More Website Clicks</div>
+                    <p class="result-description">Professional presence drives more traffic to your website</p>
+                </div>
+
+                <div class="result-stat fade-in">
+                    <div class="result-icon conversion">💰</div>
+                    <span class="result-number">2.7x</span>
+                    <div class="result-label">More Trustworthy Appearance</div>
+                    <p class="result-description">Consistent activity makes you look more established and reliable</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section full-width" id="cta">
+        <div class="container">
+            <h2 class="final-cta-title">Ready to Win The 4-Minute Decision?</h2>
+
+            <a href="tel:5673338779" class="phone-number">(567) 333-8779</a>
+
+            <p class="cta-subtext">Call now to get your FREE visibility audit</p>
+        </div>
+    </section>
 </body>
 </html>

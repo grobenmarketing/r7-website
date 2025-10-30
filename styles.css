@@ -1,0 +1,857 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a; /* Deep Black */
+    background: #ffffff; /* Freedom White */
+    font-size: 16px;
+    letter-spacing: -0.01em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Full-width section helper */
+.full-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* NAVIGATION */
+.nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Column */
+.nav-logo {
+    width: 135px;
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation Column (Center) */
+.nav-column {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.nav-menu > li {
+    padding: 8px;
+    position: relative;
+}
+
+.nav-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: #cf071d;
+}
+
+.nav-link.active {
+    color: #cf071d;
+}
+
+/* Dropdown Menu */
+.dropdown-menu-item {
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    font-size: 10px;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-menu-item:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    background-color: #ffffff;
+    border: 1px solid #1a1a1a;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    z-index: 100;
+}
+
+.dropdown-menu-item:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.submenu li {
+    padding: 0;
+}
+
+.submenu .nav-link {
+    display: block;
+    padding: 10px 16px;
+    width: 100%;
+}
+
+.submenu .nav-link:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* CTA Column (Right) */
+.nav-cta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+.nav-cta-button {
+    background: #dc2626;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-cta-button:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+/* Mobile Toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff 0%, #e8e5d4 100%); /* Freedom White to Vintage Cream */
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #e8e5d4; /* Vintage Cream */
+    border: 1px solid #bdc3c7; /* Brushed Metal */
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a4a5c; /* Space Age Teal */
+    margin-bottom: 32px;
+}
+
+.hero-badge::before {
+    content: '⚡';
+    margin-right: 8px;
+    color: #f7931e; /* Atomic Orange */
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    color: #1a1a1a; /* Deep Black */
+}
+
+.hero-highlight {
+    background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%); /* Atomic Orange to Launch Button */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: #1a1a1a; /* Deep Black */
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+.hero-body {
+    font-size: 20px;
+    color: #2a4a5c; /* Space Age Teal */
+    margin-bottom: 24px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.hero-tagline {
+    font-size: 16px;
+    color: #2a4a5c; /* Space Age Teal */
+    font-style: italic;
+    margin-bottom: 48px;
+    font-weight: 500;
+    border-top: 1px solid #bdc3c7; /* Brushed Metal */
+    padding-top: 24px;
+    margin-top: 24px;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    background: #f7931e; /* Atomic Orange */
+    color: #ffffff; /* Freedom White */
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    margin-right: 16px;
+}
+
+.hero-cta:hover {
+    background: #e8820d; /* Darker Atomic Orange */
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(247, 147, 30, 0.25);
+}
+
+.hero-secondary {
+    color: #2a4a5c; /* Space Age Teal */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 24px;
+}
+
+.hero-secondary:hover {
+    color: #1a1a1a; /* Deep Black */
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 80px 0;
+    background: #ffffff; /* Freedom White */
+    border-top: 1px solid #bdc3c7; /* Brushed Metal */
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 24px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #cf071d; /* Launch Button */
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: #2a4a5c; /* Space Age Teal */
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Problem Section */
+.problem-section {
+    padding: 120px 0;
+    background: #e8e5d4; /* Vintage Cream */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a1a; /* Deep Black */
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #2a4a5c; /* Space Age Teal */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.story-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-step {
+    background: #ffffff; /* Freedom White */
+    border-radius: 16px;
+    padding: 32px 48px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08); /* Space Age Teal shadow */
+    border: 1px solid #bdc3c7; /* Brushed Metal */
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: #f7931e; /* Atomic Orange */
+    color: #ffffff; /* Freedom White */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a; /* Deep Black */
+    margin-bottom: 8px;
+}
+
+.step-content p {
+    color: #2a4a5c; /* Space Age Teal */
+    line-height: 1.6;
+}
+
+.highlight-text {
+    color: #cf071d; /* Launch Button */
+    font-weight: 600;
+}
+
+/* Features Section */
+.features-section {
+    padding: 120px 0;
+    background: #ffffff; /* Freedom White */
+}
+
+.solution-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: #e8e5d4; /* Vintage Cream */
+    border-radius: 16px;
+    border: 2px solid #f7931e; /* Atomic Orange */
+}
+
+.solution-tagline {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f7931e; /* Atomic Orange */
+    margin-bottom: 16px;
+}
+
+.solution-description {
+    font-size: 18px;
+    color: #2a4a5c; /* Space Age Teal */
+    margin-bottom: 32px;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.process-step {
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.process-number {
+    width: 40px;
+    height: 40px;
+    background: #2a4a5c; /* Space Age Teal */
+    color: #ffffff; /* Freedom White */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 auto 16px;
+}
+
+.process-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a; /* Deep Black */
+    margin-bottom: 8px;
+}
+
+.process-description {
+    font-size: 14px;
+    color: #2a4a5c; /* Space Age Teal */
+    line-height: 1.4;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.component-card {
+    background: #e8e5d4; /* Vintage Cream */
+    border: 1px solid #bdc3c7; /* Brushed Metal */
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+.component-number {
+    width: 32px;
+    height: 32px;
+    background: #cf071d; /* Launch Button */
+    color: #ffffff; /* Freedom White */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 auto 16px;
+}
+
+.component-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a; /* Deep Black */
+    margin-bottom: 8px;
+}
+
+.component-description {
+    font-size: 14px;
+    color: #2a4a5c; /* Space Age Teal */
+    line-height: 1.4;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 120px 0;
+    background: #e8e5d4; /* Vintage Cream */
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: #ffffff; /* Freedom White */
+    border-radius: 12px;
+    border: 1px solid #bdc3c7; /* Brushed Metal */
+}
+
+.benefit-icon {
+    width: 24px;
+    height: 24px;
+    background: #f7931e; /* Atomic Orange */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Freedom White */
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.benefit-text {
+    font-weight: 500;
+    color: #1a1a1a; /* Deep Black */
+}
+
+.content-types {
+    background: #ffffff; /* Freedom White */
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #bdc3c7; /* Brushed Metal */
+}
+
+.content-types h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a; /* Deep Black */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.content-item {
+    color: #2a4a5c; /* Space Age Teal */
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #bdc3c7; /* Brushed Metal */
+}
+
+/* Case Study Section */
+.case-study-section {
+    padding: 120px 0;
+    background: #2a4a5c; /* Space Age Teal */
+    color: #ffffff; /* Freedom White */
+}
+
+.case-study-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.case-study-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ffffff; /* Freedom White */
+    letter-spacing: -0.02em;
+}
+
+.case-study-subtitle {
+    font-size: 18px;
+    color: #bdc3c7; /* Brushed Metal */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.case-study-card {
+    background: #1a1a1a; /* Deep Black */
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 24px rgba(26, 26, 26, 0.3);
+    border: 1px solid #bdc3c7; /* Brushed Metal */
+    max-width: 1000px;
+    margin: 0 auto 80px;
+}
+
+.case-study-card-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: #ffffff; /* Freedom White */
+}
+
+.before-after-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+.before-section h4 {
+    color: #cf071d; /* Launch Button */
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.after-section h4 {
+    color: #f7931e; /* Atomic Orange */
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.result-list {
+    list-style: none;
+}
+
+.result-list li {
+    margin-bottom: 8px;
+    color: #e8e5d4; /* Vintage Cream */
+    font-size: 16px;
+}
+
+.result-list li::before {
+    content: "• ";
+    color: #bdc3c7; /* Brushed Metal */
+    margin-right: 8px;
+}
+
+.testimonial {
+    font-style: italic;
+    font-size: 18px;
+    color: #bdc3c7; /* Brushed Metal */
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #bdc3c7; /* Brushed Metal */
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 80px;
+}
+
+.result-stat {
+    text-align: center;
+    padding: 32px 24px;
+}
+
+.result-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 20px;
+}
+
+.result-icon.phone { background: #ffffff; color: #1a1a1a; } /* Freedom White bg, Deep Black text */
+.result-icon.speed { background: #f7931e; } /* Atomic Orange */
+.result-icon.referral { background: #cf071d; } /* Launch Button */
+.result-icon.conversion { background: #f7931e; } /* Atomic Orange */
+
+.result-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff; /* Freedom White */
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.result-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff; /* Freedom White */
+    margin-bottom: 8px;
+}
+
+.result-description {
+    color: #bdc3c7; /* Brushed Metal */
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Final CTA Section */
+.final-cta-section {
+    padding: 120px 0;
+    background: #1a1a1a; /* Deep Black */
+    color: #ffffff; /* Freedom White */
+    text-align: center;
+}
+
+.final-cta-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    color: #ffffff; /* Freedom White */
+}
+
+.final-cta-subtitle {
+    font-size: 18px;
+    color: #bdc3c7; /* Brushed Metal */
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.phone-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #f7931e; /* Atomic Orange */
+    text-decoration: none;
+    display: block;
+    margin: 32px 0;
+    letter-spacing: -0.02em;
+}
+
+.phone-number:hover {
+    color: #cf071d; /* Launch Button on hover */
+}
+
+.cta-subtext {
+    font-size: 18px;
+    color: #bdc3c7; /* Brushed Metal */
+    margin-bottom: 24px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .hero-body {
+        font-size: 18px;
+    }
+
+    .section-title, .case-study-title, .final-cta-title {
+        font-size: 32px;
+    }
+
+    .story-step {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .section-header, .case-study-header {
+        margin-bottom: 60px;
+    }
+
+    .process-steps, .components-grid, .before-after-grid, .benefits-grid, .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-list {
+        grid-template-columns: 1fr;
+    }
+
+    .final-cta-subtitle {
+        margin-bottom: 40px;
+    }
+
+    .phone-number {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .components-grid, .benefits-grid, .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
