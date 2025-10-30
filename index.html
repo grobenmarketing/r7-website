@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Only</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* NAVIGATION */
+        .nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1170px;
+            margin: 0 auto;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo Column */
+        .nav-logo {
+            width: 135px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Navigation Column (Center) */
+        .nav-column {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-weight: 500;
+            align-items: center;
+        }
+
+        .nav-menu > li {
+            padding: 8px;
+            position: relative;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: color 0.2s ease;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            color: #cf071d;
+        }
+
+        .nav-link.active {
+            color: #cf071d;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu-item {
+            cursor: pointer;
+        }
+
+        .dropdown-icon {
+            font-size: 10px;
+            margin-left: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown-menu-item:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            list-style: none;
+            padding: 0;
+            margin-top: 5px;
+            background-color: #ffffff;
+            border: 1px solid #1a1a1a;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0s 0.3s;
+            z-index: 100;
+        }
+
+        .dropdown-menu-item:hover .submenu {
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0s;
+        }
+
+        .submenu li {
+            padding: 0;
+        }
+
+        .submenu .nav-link {
+            display: block;
+            padding: 10px 16px;
+            width: 100%;
+        }
+
+        .submenu .nav-link:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* CTA Column (Right) */
+        .nav-cta {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-width: 150px;
+            flex-shrink: 0;
+        }
+
+        .nav-cta-button {
+            background: #dc2626;
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta-button:hover {
+            background: #b91c1c;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/r7creative-logo.png" alt="R7 Creative">
+            </div>
+
+            <div class="nav-column" id="navColumn">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="dropdown-menu-item">
+                        <a href="how-it-works.html" class="nav-link">
+                            How It Works
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="results.html" class="nav-link">Results</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="media.html" class="nav-link">Media</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-cta">
+                <a href="contact.html" class="nav-cta-button">Get Started</a>
+            </div>
+
+            <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+</body>
+</html>
