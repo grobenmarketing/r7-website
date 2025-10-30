@@ -1,0 +1,552 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: #1a1a1a; /* Deep Black */
+        background: #ffffff; /* Freedom White */
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* Full-width section helper */
+    .full-width {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 120px 0 80px;
+        text-align: center;
+        background: linear-gradient(180deg, #ffffff 0%, #e8e5d4 100%); /* Freedom White to Vintage Cream */
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 6vw, 72px);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+        color: #1a1a1a; /* Deep Black */
+    }
+
+    .hero-highlight {
+        background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%); /* Atomic Orange to Launch Button */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        color: #2a4a5c; /* Space Age Teal */
+        margin-bottom: 24px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 400;
+    }
+
+    .hero-body {
+        font-size: 18px;
+        color: #2a4a5c; /* Space Age Teal */
+        margin-bottom: 24px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 400;
+    }
+
+    .hero-tagline {
+        font-size: 16px;
+        color: #2a4a5c; /* Space Age Teal */
+        font-style: italic;
+        margin-bottom: 48px;
+        font-weight: 500;
+        border-top: 1px solid #bdc3c7; /* Brushed Metal */
+        padding-top: 24px;
+        margin-top: 24px;
+    }
+
+    /* Case Study Sections */
+    .case-study-section {
+        padding: 120px 0;
+        background: #ffffff; /* Freedom White */
+    }
+
+    .case-study-section:nth-child(even) {
+        background: #e8e5d4; /* Vintage Cream */
+    }
+
+    .case-study-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .case-study-header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .case-study-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #1a1a1a; /* Deep Black */
+        letter-spacing: -0.02em;
+    }
+
+    .case-study-content {
+        background: #ffffff; /* Freedom White */
+        border-radius: 16px;
+        padding: 48px;
+        box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08); /* Space Age Teal shadow */
+        border: 1px solid #bdc3c7; /* Brushed Metal */
+        position: relative;
+    }
+
+    .case-study-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f7931e, #cf071d); /* Atomic Orange to Launch Button */
+        border-radius: 16px 16px 0 0;
+    }
+
+    .problem-section, .solution-section, .result-section {
+        margin-bottom: 32px;
+    }
+
+    .section-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #cf071d; /* Launch Button */
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+    }
+
+    .content-text {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #2a4a5c; /* Space Age Teal */
+        margin-bottom: 16px;
+    }
+
+    .testimonial {
+        background: #e8e5d4; /* Vintage Cream */
+        border-left: 4px solid #f7931e; /* Atomic Orange */
+        border-radius: 8px;
+        padding: 24px;
+        margin-top: 32px;
+    }
+
+    .testimonial-text {
+        font-size: 18px;
+        line-height: 1.7;
+        color: #2a4a5c; /* Space Age Teal */
+        font-style: italic;
+        margin-bottom: 16px;
+    }
+
+    .testimonial-author {
+        font-weight: 600;
+        color: #1a1a1a; /* Deep Black */
+        font-size: 16px;
+    }
+
+    /* Results Section */
+    .results-section {
+        padding: 120px 0;
+        background: #2a4a5c; /* Space Age Teal */
+        color: #ffffff; /* Freedom White */
+    }
+
+    .results-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .results-title {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #ffffff; /* Freedom White */
+        letter-spacing: -0.02em;
+    }
+
+    .results-subtitle {
+        font-size: 18px;
+        color: #bdc3c7; /* Brushed Metal */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        margin-bottom: 64px;
+    }
+
+    .result-card {
+        background: #1a1a1a; /* Deep Black */
+        border-radius: 16px;
+        padding: 32px 24px;
+        text-align: center;
+        border: 1px solid #bdc3c7; /* Brushed Metal */
+        transition: all 0.3s ease;
+    }
+
+    .result-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(26, 26, 26, 0.3);
+        border-color: #f7931e; /* Atomic Orange on hover */
+    }
+
+    .result-number {
+        font-size: 32px;
+        font-weight: 700;
+        color: #f7931e; /* Atomic Orange */
+        display: block;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .result-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff; /* Freedom White */
+        margin-bottom: 8px;
+    }
+
+    .result-description {
+        color: #bdc3c7; /* Brushed Metal */
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .philosophy-quote {
+        background: #1a1a1a; /* Deep Black */
+        border-radius: 16px;
+        padding: 48px;
+        text-align: center;
+        border: 2px solid #f7931e; /* Atomic Orange */
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .philosophy-text {
+        font-size: 20px;
+        line-height: 1.7;
+        color: #e8e5d4; /* Vintage Cream */
+        font-style: italic;
+        margin-bottom: 24px;
+    }
+
+    .philosophy-author {
+        font-weight: 600;
+        color: #bdc3c7; /* Brushed Metal */
+        font-size: 16px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 120px 0;
+        background: #1a1a1a; /* Deep Black */
+        color: #ffffff; /* Freedom White */
+        text-align: center;
+    }
+
+    .cta-title {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+        color: #ffffff; /* Freedom White */
+    }
+
+    .phone-number {
+        font-size: 48px;
+        font-weight: 700;
+        color: #f7931e; /* Atomic Orange */
+        text-decoration: none;
+        display: block;
+        margin: 32px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .phone-number:hover {
+        color: #cf071d; /* Launch Button on hover */
+    }
+
+    .cta-subtext {
+        font-size: 18px;
+        color: #bdc3c7; /* Brushed Metal */
+        margin-bottom: 24px;
+    }
+
+    .cta-description {
+        font-size: 16px;
+        color: #bdc3c7; /* Brushed Metal */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 20px;
+        }
+        
+        .hero, .case-study-section, .results-section, .cta-section {
+            padding: 80px 0;
+        }
+        
+        .hero h1 {
+            font-size: 40px;
+        }
+        
+        .hero-subtitle, .hero-body {
+            font-size: 18px;
+        }
+        
+        .case-study-title, .results-title, .cta-title {
+            font-size: 28px;
+        }
+        
+        .case-study-content {
+            padding: 32px 24px;
+        }
+        
+        .results-header {
+            margin-bottom: 60px;
+        }
+        
+        .results-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .philosophy-quote {
+            padding: 32px 24px;
+        }
+
+        .phone-number {
+            font-size: 32px;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .results-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="hero full-width">
+    <div class="container">
+        <h1>Real Results from Businesses Who Stopped Losing Calls and Started Winning the <span class="hero-highlight">4-Minute Decision</span></h1>
+        
+        <p class="hero-subtitle">See how local businesses went from being eliminated in browser tabs to getting phone calls</p>
+        
+        <p class="hero-body">These businesses were being overlooked because their digital storefronts looked dead. Here's what happened when we brought them back to life.</p>
+
+        <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+    </div>
+</section>
+
+<!-- Case Study 1: Solar Company -->
+<section class="case-study-section">
+    <div class="container">
+        <div class="case-study-container">
+            <div class="case-study-header">
+                <h2 class="case-study-title">The Solar Company's Appointment Cancelation Problem</h2>
+            </div>
+            
+            <div class="case-study-content">
+                <div class="problem-section">
+                    <div class="section-label">The Problem</div>
+                    <p class="content-text">They'd schedule 10 appointments and watch 6 or 7 evaporate. Only 8 Google reviews, no photos on their Google Business Profile, and their social media looked like a digital wasteland.</p>
+                </div>
+
+                <div class="solution-section">
+                    <div class="section-label">The Solution</div>
+                    <p class="content-text">Within weeks of bringing their digital storefront back to life - collecting reviews from satisfied customers, responding to every review like a caring business owner, adding weekly photos of sparkling solar installations and happy homeowners, plus simple social media posts showcasing their team and work.</p>
+                </div>
+
+                <div class="result-section">
+                    <div class="section-label">The Result</div>
+                    <p class="content-text">Their appointment show-up rate soared from barely 30% to a solid 60-70%, and their sales climbed dramatically.</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"We were getting too many appointment cancelations. After we fixed our search presence, the growth was unbelievable."</p>
+                    <p class="testimonial-author">— Alan, Marketing Director</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Case Study 2: Print Shop -->
+<section class="case-study-section">
+    <div class="container">
+        <div class="case-study-container">
+            <div class="case-study-header">
+                <h2 class="case-study-title">From Digitally Closed to Increased Revenue</h2>
+            </div>
+            
+            <div class="case-study-content">
+                <div class="problem-section">
+                    <div class="section-label">The Problem</div>
+                    <p class="content-text">Completely invisible online, missing major opportunities from companies searching for local vendors. Infact, the general feedback from customers before implementing the system was, 'I drove by you every day and didnt even know you were here.'</p>
+                </div>
+
+                <div class="solution-section">
+                    <div class="section-label">The Solution</div>
+                    <p class="content-text">3 posts per week, optimize Google Business and social media profiles. Just four weeks of opening their digital doors with regular social media posts and an active Google Business Profile.</p>
+                </div>
+
+                <div class="result-section">
+                    <div class="section-label">The Result</div>
+                    <p class="content-text">A large power company discovered them through Facebook, browsed their newly active Google Business Profile, explored their website, and handed them a massive amount of business to wrap 47 vehicles.</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"Everyone tells me they've seen us on social media and love it. It does seem like there's less price resistance to our quotes."</p>
+                    <p class="testimonial-author">— Mark, President</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Case Study 3: Service Business -->
+<section class="case-study-section">
+    <div class="container">
+        <div class="case-study-container">
+            <div class="case-study-header">
+                <h2 class="case-study-title">The Invisible Residential Service Business</h2>
+            </div>
+            
+            <div class="case-study-content">
+                <div class="problem-section">
+                    <div class="section-label">The Problem</div>
+                    <p class="content-text">Not even a flicker of life on their Google Business Profile. Phone never rang from online searches. Business was strictly word of mouth or door to door solicitation.</p>
+                </div>
+
+                <div class="solution-section">
+                    <div class="section-label">The Solution</div>
+                    <p class="content-text">Within days of installing our 'digital lighting system' - weekly posts, fresh photos, and responses to all existing reviews.</p>
+                </div>
+
+                <div class="result-section">
+                    <div class="section-label">The Result</div>
+                    <p class="content-text">Their phone rang with a quote request. When asked how they found the business, the customer said "from your Google profile page." The quotes kept coming and proposals became accepted quicker.</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"For the longest time the phone would ring and emails would come in like we were used to. Not too long after we did this, we started getting calls from people who found us on Google."</p>
+                    <p class="testimonial-author">— Cody, Owner/Operator</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section full-width">
+    <div class="container">
+        <div class="results-header">
+            <h2 class="results-title">What Our Clients Experience</h2>
+            <p class="results-subtitle">Consistent results across service-based businesses who win the 4-minute decision</p>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card fade-in">
+                <span class="result-number">15-30%</span>
+                <h3 class="result-title">Less Price Resistance</h3>
+                <p class="result-description">Customers trust you more when they see consistent, professional activity</p>
+            </div>
+
+            <div class="result-card fade-in">
+                <span class="result-number">25-50%</span>
+                <h3 class="result-title">More Phone Calls</h3>
+                <p class="result-description">Fresh content keeps you visible during 4-minute customer decisions</p>
+            </div>
+
+            <div class="result-card fade-in">
+                <span class="result-number">35-70%</span>
+                <h3 class="result-title">More Website Clicks</h3>
+                <p class="result-description">Professional presence drives more traffic to your website</p>
+            </div>
+
+            <div class="result-card fade-in">
+                <span class="result-number">2.7x</span>
+                <h3 class="result-title">More Trustworthy Appearance</h3>
+                <p class="result-description">Consistent activity makes you look more established and reliable</p>
+            </div>
+        </div>
+
+        <div class="philosophy-quote">
+            <p class="philosophy-text">"We're a results-as-a-service company. We combine proven marketing disciplines with current platform best practices that have delivered measurable outcomes for over 20 years. Our approach isn't about following trends - it's about implementing strategies that drive phone calls, quote requests, and faster 'yes' decisions. Because that's what matters to your business."</p>
+            <p class="philosophy-author">— Keith Groben, R7 Creative President</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section full-width">
+    <div class="container">
+        <h2 class="cta-title">Ready to Win The 4-Minute Decision?</h2>
+        
+        <a href="tel:5673338779" class="phone-number">(567) 333-8779</a>
+        
+        <p class="cta-subtext">Call now to get your FREE visibility audit</p>
+        
+        <p class="cta-description">See if you qualify for the same system that helped these businesses land their biggest opportunities in their first month.</p>
+    </div>
+</section>
