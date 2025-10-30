@@ -1,0 +1,615 @@
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .full-width {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #e8e5d4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23f7931e" fill-opacity="0.03"><circle cx="30" cy="30" r="2"/></g></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, #f7931e 0%, #cf071d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
+            color: #2a4a5c;
+            font-style: italic;
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #2a4a5c;
+            line-height: 1.8;
+        }
+
+        .story-content p {
+            margin-bottom: 24px;
+        }
+
+        .highlight-box {
+            background: #e8e5d4;
+            border-left: 4px solid #f7931e;
+            padding: 32px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .highlight-box p {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 120px 0;
+            background: #e8e5d4;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .philosophy-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-8px);
+            border-color: #f7931e;
+            box-shadow: 0 15px 40px rgba(247, 147, 30, 0.25);
+        }
+
+        .philosophy-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #f7931e, #cf071d);
+            color: #ffffff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .philosophy-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .philosophy-card p {
+            font-size: 16px;
+            color: #2a4a5c;
+            line-height: 1.7;
+        }
+
+        /* Difference Section */
+        .difference-section {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .comparison-card {
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .traditional-card {
+            background: #ffffff;
+            border: 2px solid #cf071d;
+        }
+
+        .r7-card {
+            background: #e8e5d4;
+            border: 2px solid #f7931e;
+        }
+
+        .comparison-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .traditional-card .comparison-title {
+            color: #cf071d;
+        }
+
+        .r7-card .comparison-title {
+            color: #f7931e;
+        }
+
+        .comparison-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .comparison-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: #2a4a5c;
+        }
+
+        .traditional-card .comparison-list li::before {
+            content: '❌';
+            flex-shrink: 0;
+        }
+
+        .r7-card .comparison-list li::before {
+            content: '✅';
+            flex-shrink: 0;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 120px 0;
+            background: #e8e5d4;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(247, 147, 30, 0.25);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #f7931e, #cf071d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 auto 24px;
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f7931e;
+            margin-bottom: 16px;
+        }
+
+        .team-bio {
+            font-size: 15px;
+            color: #2a4a5c;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-quote {
+            font-size: 14px;
+            font-style: italic;
+            color: #2a4a5c;
+            padding: 16px;
+            background: #e8e5d4;
+            border-radius: 8px;
+            border-left: 3px solid #f7931e;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 120px 0;
+            background: #2a4a5c;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .location-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .location-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #ffffff;
+        }
+
+        .location-details {
+            font-size: 18px;
+            color: #bdc3c7;
+            margin-bottom: 16px;
+        }
+
+        .location-details strong {
+            color: #f7931e;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .phone-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #f7931e;
+            text-decoration: none;
+            display: block;
+            letter-spacing: -0.02em;
+        }
+
+        .phone-number:hover {
+            color: #cf071d;
+        }
+
+        .email-link {
+            font-size: 24px;
+            color: #bdc3c7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .email-link:hover {
+            color: #f7931e;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: #bdc3c7;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .section-title, .cta-title, .location-title {
+                font-size: 32px;
+            }
+            
+            .philosophy-grid, .comparison-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-number {
+                font-size: 32px;
+            }
+
+            .email-link {
+                font-size: 20px;
+            }
+
+            .story-content {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <div class="hero-content">
+                <h1>We Turn Businesses from <span class="hero-highlight">Invisible to Undeniable</span></h1>
+                <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Story</h2>
+            </div>
+            
+            <div class="story-content">
+                <p>After analyzing 1,300+ businesses, we found 80% looked closed online despite thriving in the real world. Customers eliminated them during 4-minute decision windows, choosing competitors who simply looked more alive.</p>
+                
+                <p>We built a solution: businesses provide 10 minutes of authentic work moments weekly, and we transform them into professional content that wins those critical decisions.</p>
+                
+                <div class="highlight-box">
+                    <p>Your business doesn't need more followers. It needs more customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Philosophy</h2>
+            </div>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card fade-in">
+                    <div class="philosophy-icon">📈</div>
+                    <h3>Results-Focused</h3>
+                    <p>Our approach drives phone calls, quote requests, faster decisions, and less price resistance. We measure success in revenue, not reactions.</p>
+                </div>
+                
+                <div class="philosophy-card fade-in">
+                    <div class="philosophy-icon">🎯</div>
+                    <h3>Authentic Impact</h3>
+                    <p>Social media success should be measured in business outcomes. We create content that converts browsers into buyers during those critical 4-minute decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Difference Section -->
+    <section class="difference-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How We're Different</h2>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card traditional-card">
+                    <h3 class="comparison-title">Traditional Agencies</h3>
+                    <ul class="comparison-list">
+                        <li>Generic content without your input</li>
+                        <li>$2,000-5,000+ monthly retainers</li>
+                        <li>Focus on likes and followers</li>
+                        <li>Long-term contracts required</li>
+                        <li>Content lacks authenticity</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card r7-card">
+                    <h3 class="comparison-title">R7 Creative</h3>
+                    <ul class="comparison-list">
+                        <li>Authentic collaboration with you</li>
+                        <li>Affordable investment that fits your budget</li>
+                        <li>Just 10 minutes of your time per week</li>
+                        <li>Focus on business results that matter</li>
+                        <li>Your real work becomes compelling content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet The Team</h2>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-avatar">KG</div>
+                    <h3 class="team-name">Keith Groben</h3>
+                    <div class="team-role">President</div>
+                    <p class="team-bio">The architect of our markeitng systems with 20 years of proven results.</p>
+                    <!--div class="team-quote">...</div-->
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-avatar">SG</div>
+                    <h3 class="team-name">Stacie Groben</h3>
+                    <div class="team-role">Director of Operations</div>
+                    <p class="team-bio">Outstanding attention to detail and people, ensuring everything works well for our clients first.</p>
+                    <!--div class="team-quote">...</div-->
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div class="team-avatar">JG</div>
+                    <h3 class="team-name">Jordan Groben</h3>
+                    <div class="team-role">Director of Sales & Partnerships</div>
+                    <p class="team-bio">Strengthens existing relationships with our clients and develops new ones.</p>
+                    <!--div class="team-quote">"..."</div-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section full-width">
+        <div class="container">
+            <div class="location-content">
+                <h2 class="location-title">Ashland, Ohio</h2>
+                <p class="location-details"><strong>North East Ohio</strong> • Serving Nationwide</p>
+                <p class="location-details">In Person and Remote Consultations Available</p>
+                <p class="location-details">Hours: Monday-Friday, 8:00 AM - 5:00 PM EST</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Stop Looking Closed Online?</h2>
+                
+                <div class="contact-methods">
+                    <a href="tel:5673338779" class="phone-number">(567) 333-8779</a>
+                </div>
+                
+                <p class="cta-description">Get your FREE visibility audit</p>
+            </div>
+        </div>
+    </section>
