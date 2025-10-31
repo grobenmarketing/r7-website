@@ -1223,6 +1223,188 @@ body {
     font-size: 16px;
 }
 
+/* Contact Section (Contact Page) */
+.contact-section {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.phone-section {
+    background: #e8e5d4;
+    border: 2px solid #f7931e;
+    border-radius: 16px;
+    padding: 48px;
+    margin-bottom: 48px;
+}
+
+.phone-label {
+    font-size: 18px;
+    color: #2a4a5c;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.phone-cta {
+    font-size: 18px;
+    color: #cf071d;
+    font-weight: 600;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.contact-card {
+    background: #e8e5d4;
+    padding: 32px 24px;
+    border-radius: 16px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(247, 147, 30, 0.25);
+    border-color: #f7931e;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f7931e, #cf071d);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.contact-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.contact-info {
+    color: #2a4a5c;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-link {
+    color: #f7931e;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: #cf071d;
+}
+
+.location-hours-section {
+    padding: 80px 0;
+    background: #e8e5d4;
+}
+
+.location-hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #bdc3c7;
+    box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08);
+}
+
+.info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.location-info {
+    text-align: center;
+    color: #2a4a5c;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hours-list {
+    list-style: none;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #bdc3c7;
+    font-size: 16px;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.hours-day {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.hours-time {
+    color: #2a4a5c;
+}
+
+.cta-subtitle {
+    font-size: 18px;
+    color: #bdc3c7;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Headers - Contact page variant */
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: #2a4a5c;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Process Section (How It Works Page) */
 .process-section {
     padding: 120px 0;
@@ -1651,8 +1833,21 @@ body {
         padding: 0 20px;
     }
 
-    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section, .process-section, .pricing-section, .results-section {
+    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section, .process-section, .pricing-section, .results-section, .contact-section, .location-hours-section {
         padding: 80px 0;
+    }
+
+    .phone-section {
+        padding: 32px 24px;
+    }
+
+    .location-hours-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .info-card {
+        padding: 24px;
     }
 
     .case-study-content {
@@ -1741,5 +1936,231 @@ body {
 
     .results-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================================
+   MEDIA PAGE STYLES
+   =================================== */
+
+/* Media Hero Section - Space Age Teal gradient */
+.hero.media-hero {
+    background: linear-gradient(135deg, #2a4a5c 0%, #1a1a1a 100%); /* Space Age Teal to Deep Black */
+    color: #ffffff; /* Freedom White */
+}
+
+.hero.media-hero::before {
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23f7931e" fill-opacity="0.08"><circle cx="30" cy="30" r="2"/></g></svg>');
+}
+
+.hero.media-hero h1 {
+    color: #ffffff; /* Freedom White */
+}
+
+/* Co-Founders Section */
+.founders-section {
+    padding: 120px 0;
+    background: #ffffff; /* Freedom White */
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 48px;
+    margin-top: 48px;
+}
+
+.founder-card {
+    background: #e8e5d4; /* Vintage Cream */
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    border: 2px solid #bdc3c7; /* Brushed Metal */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f7931e, #cf071d); /* Atomic Orange to Launch Button */
+    border-radius: 24px 24px 0 0;
+}
+
+.founder-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(42, 74, 92, 0.15);
+    border-color: #f7931e; /* Atomic Orange */
+}
+
+.founder-avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #f7931e, #cf071d); /* Atomic Orange to Launch Button */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff; /* Freedom White */
+    margin: 0 auto 24px;
+    border: 4px solid #ffffff; /* Freedom White */
+}
+
+.founder-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a; /* Deep Black */
+}
+
+.founder-title {
+    font-size: 16px;
+    color: #2a4a5c; /* Space Age Teal */
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #ffffff; /* Freedom White */
+    color: #2a4a5c; /* Space Age Teal */
+    padding: 16px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-link:hover {
+    background: #f7931e; /* Atomic Orange */
+    color: #ffffff; /* Freedom White */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(247, 147, 30, 0.25);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Platform-specific hover colors */
+.social-link.youtube:hover {
+    background: #FF0000;
+}
+
+.social-link.instagram:hover {
+    background: #E4405F;
+}
+
+.social-link.tiktok:hover {
+    background: #000000;
+}
+
+.social-link.linkedin:hover {
+    background: #0077B5;
+}
+
+/* Company Info Section */
+.company-info-section {
+    padding: 80px 0;
+    background: #e8e5d4; /* Vintage Cream */
+    text-align: center;
+}
+
+.company-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.company-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a1a; /* Deep Black */
+}
+
+.company-description {
+    font-size: 18px;
+    color: #2a4a5c; /* Space Age Teal */
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.company-cta {
+    display: inline-flex;
+    align-items: center;
+    background: #f7931e; /* Atomic Orange */
+    color: #ffffff; /* Freedom White */
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.company-cta:hover {
+    background: #cf071d; /* Launch Button */
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(247, 147, 30, 0.25);
+}
+
+/* Media Page Responsive Styles */
+@media (max-width: 768px) {
+    .founders-section, .company-info-section {
+        padding: 80px 0;
+    }
+
+    .company-title {
+        font-size: 28px;
+    }
+
+    .founders-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .founder-card {
+        padding: 36px 28px;
+    }
+
+    .founder-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .founders-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
