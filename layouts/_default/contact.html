@@ -1,0 +1,89 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <h1>{{ .Params.hero.title | markdownify }}</h1>
+            <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+            <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Primary Phone Contact -->
+                <div class="phone-section fade-in">
+                    <div class="phone-label">{{ .Params.contact.phone_label }}</div>
+                    <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
+                    <div class="phone-cta">{{ .Params.contact.phone_cta }}</div>
+                </div>
+
+                <!-- Additional Contact Methods -->
+                <div class="contact-grid">
+                    {{ range .Params.contact.methods }}
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">{{ .icon }}</div>
+                        <h3 class="contact-title">{{ .title }}</h3>
+                        <div class="contact-info">
+                            {{ if .primary_link }}
+                            <a href="{{ .primary_link }}" class="contact-link">{{ .primary }}</a>
+                            {{ else }}
+                            {{ .primary }}
+                            {{ end }}
+                        </div>
+                        {{ if .secondary }}
+                        <div class="contact-info">{{ .secondary }}</div>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="location-hours-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ .Params.location_hours.title }}</h2>
+                <p>{{ .Params.location_hours.subtitle }}</p>
+            </div>
+
+            <div class="location-hours-grid">
+                <div class="info-card fade-in">
+                    <h3>{{ .Params.location_hours.location.title }}</h3>
+                    <div class="location-info">
+                        {{ range .Params.location_hours.location.details }}
+                        <p>{{ . | markdownify }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class="info-card fade-in">
+                    <h3>{{ .Params.location_hours.hours.title }}</h3>
+                    <ul class="hours-list">
+                        {{ range .Params.location_hours.hours.schedule }}
+                        <li class="hours-item">
+                            <span class="hours-day">{{ .day }}</span>
+                            <span class="hours-time">{{ .time }}</span>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <h2 class="cta-title">{{ .Params.cta.title }}</h2>
+            <p class="cta-subtitle">{{ .Params.cta.subtitle }}</p>
+
+            <a href="tel:{{ .Site.Params.phoneRaw }}" class="cta-phone">{{ .Site.Params.phone }}</a>
+
+            <p class="cta-description">{{ .Params.cta.description }}</p>
+        </div>
+    </section>
+{{ end }}

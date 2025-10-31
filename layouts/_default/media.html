@@ -1,0 +1,58 @@
+{{ define "head" }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{{ end }}
+
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero media-hero full-width">
+        <div class="container">
+            <div class="hero-content">
+                <h1>{{ .Params.hero.title | markdownify }}</h1>
+                <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+                <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co-Founders Section -->
+    <section class="founders-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.founders.title }}</h2>
+                <p class="section-subtitle">{{ .Params.founders.subtitle }}</p>
+            </div>
+
+            <div class="founders-grid">
+                {{ range .Params.founders.members }}
+                <div class="founder-card fade-in">
+                    <div class="founder-avatar">{{ .initials }}</div>
+                    <h3 class="founder-name">{{ .name }}</h3>
+                    <p class="founder-title">{{ .title }}</p>
+
+                    <div class="social-links">
+                        {{ range .social }}
+                        <a href="{{ .url }}" class="social-link {{ .platform }}">
+                            <div class="social-icon">
+                                <i class="{{ .icon }}"></i>
+                            </div>
+                            {{ .label }}
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section class="company-info-section full-width">
+        <div class="container">
+            <div class="company-info">
+                <h2 class="company-title">{{ .Params.company_info.title }}</h2>
+                <p class="company-description">{{ .Params.company_info.description }}</p>
+                <a href="tel:{{ .Site.Params.phoneRaw }}" class="company-cta">{{ .Params.company_info.cta_text }}: {{ .Site.Params.phone }}</a>
+            </div>
+        </div>
+    </section>
+{{ end }}

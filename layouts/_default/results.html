@@ -1,0 +1,87 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <h1>{{ .Params.hero.title | markdownify }}</h1>
+
+            <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+
+            <p class="hero-body">{{ .Params.hero.body }}</p>
+
+            <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    {{ range .Params.case_studies }}
+    <section class="case-study-section">
+        <div class="container">
+            <div class="case-study-container">
+                <div class="case-study-header">
+                    <h2 class="case-study-title">{{ .title }}</h2>
+                </div>
+
+                <div class="case-study-content">
+                    <div class="problem-section">
+                        <div class="section-label">The Problem</div>
+                        <p class="content-text">{{ .problem }}</p>
+                    </div>
+
+                    <div class="solution-section">
+                        <div class="section-label">The Solution</div>
+                        <p class="content-text">{{ .solution }}</p>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="section-label">The Result</div>
+                        <p class="content-text">{{ .result }}</p>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">"{{ .testimonial.quote }}"</p>
+                        <p class="testimonial-author">— {{ .testimonial.author }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Results Section -->
+    <section class="results-section full-width">
+        <div class="container">
+            <div class="results-header">
+                <h2 class="results-title">{{ .Params.results_section.title }}</h2>
+                <p class="results-subtitle">{{ .Params.results_section.subtitle }}</p>
+            </div>
+
+            <div class="results-grid">
+                {{ range .Params.results_section.stats }}
+                <div class="result-card fade-in">
+                    <span class="result-number">{{ .number }}</span>
+                    <h3 class="result-title">{{ .title }}</h3>
+                    <p class="result-description">{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="philosophy-quote">
+                <p class="philosophy-text">"{{ .Params.results_section.philosophy.quote }}"</p>
+                <p class="philosophy-author">— {{ .Params.results_section.philosophy.author }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <h2 class="cta-title">{{ .Params.cta.title }}</h2>
+
+            <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
+
+            <p class="cta-subtext">{{ .Params.cta.subtext }}</p>
+
+            <p class="cta-description">{{ .Params.cta.description }}</p>
+        </div>
+    </section>
+{{ end }}

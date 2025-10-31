@@ -1,0 +1,125 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <div class="hero-content">
+                <h1>{{ .Params.hero.title | markdownify }}</h1>
+                <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.story.title }}</h2>
+            </div>
+
+            <div class="story-content">
+                {{ range .Params.story.paragraphs }}
+                <p>{{ . }}</p>
+                {{ end }}
+
+                <div class="highlight-box">
+                    <p>{{ .Params.story.highlight }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.philosophy.title }}</h2>
+            </div>
+
+            <div class="philosophy-grid">
+                {{ range .Params.philosophy.items }}
+                <div class="philosophy-card fade-in">
+                    <div class="philosophy-icon">{{ .icon }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Difference Section -->
+    <section class="difference-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.difference.title }}</h2>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card traditional-card">
+                    <h3 class="comparison-title">{{ .Params.difference.traditional.title }}</h3>
+                    <ul class="comparison-list">
+                        {{ range .Params.difference.traditional.points }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+
+                <div class="comparison-card r7-card">
+                    <h3 class="comparison-title">{{ .Params.difference.r7.title }}</h3>
+                    <ul class="comparison-list">
+                        {{ range .Params.difference.r7.points }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.team.title }}</h2>
+            </div>
+
+            <div class="team-grid">
+                {{ range .Params.team.members }}
+                <div class="team-card fade-in">
+                    <div class="team-avatar">{{ .initials }}</div>
+                    <h3 class="team-name">{{ .name }}</h3>
+                    <div class="team-role">{{ .role }}</div>
+                    <p class="team-bio">{{ .bio }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section full-width">
+        <div class="container">
+            <div class="location-content">
+                <h2 class="location-title">{{ .Params.location.title }}</h2>
+                {{ range .Params.location.details }}
+                <p class="location-details">{{ . | markdownify }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">{{ .Params.cta.title }}</h2>
+
+                <div class="contact-methods">
+                    <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
+                </div>
+
+                <p class="cta-description">{{ .Params.cta.description }}</p>
+            </div>
+        </div>
+    </section>
+{{ end }}

@@ -1,0 +1,174 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <div class="hero-badge">{{ .Params.hero.badge }}</div>
+
+            <h1>{{ .Params.hero.title | replaceRE "4-Minute Decision" "<span class=\"hero-highlight\">4-Minute Decision</span>" | safeHTML }}</h1>
+
+            <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+
+            <p class="hero-body">{{ .Params.hero.body }}</p>
+
+            <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                {{ range .Params.stats }}
+                <div class="stat-item">
+                    <span class="stat-number">{{ .number }}</span>
+                    <span class="stat-label">{{ .label }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section full-width" id="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.problem_section.title }}</h2>
+                <p class="section-subtitle">{{ .Params.problem_section.subtitle }}</p>
+            </div>
+
+            <div class="story-timeline">
+                {{ range .Params.problem_section.story_steps }}
+                <div class="story-step fade-in">
+                    <div class="step-number">{{ .number }}</div>
+                    <div class="step-content">
+                        <h3>{{ .title }}</h3>
+                        <p>{{ .description | markdownify }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="solution-intro">
+                <h2 class="solution-tagline">{{ .Params.solution.tagline }}</h2>
+                <p class="solution-description">{{ .Params.solution.description }}</p>
+
+                <div class="process-steps">
+                    {{ range .Params.solution.process_steps }}
+                    <div class="process-step">
+                        <div class="process-number">{{ .number }}</div>
+                        <h3 class="process-title">{{ .title }}</h3>
+                        <p class="process-description">{{ .description }}</p>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.components.title }}</h2>
+            </div>
+
+            <div class="components-grid">
+                {{ range .Params.components.items }}
+                <div class="component-card fade-in">
+                    <div class="component-number">{{ .number }}</div>
+                    <h3 class="component-title">{{ .title }}</h3>
+                    <p class="component-description">{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.benefits.title }}</h2>
+                <p class="section-subtitle">{{ .Params.benefits.subtitle }}</p>
+            </div>
+
+            <div class="benefits-grid">
+                {{ range .Params.benefits.items }}
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✓</div>
+                    <p class="benefit-text">{{ .text }}</p>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="content-types">
+                <h3>{{ .Params.benefits.content_types_title }}</h3>
+                <div class="content-list">
+                    {{ range .Params.benefits.content_types }}
+                    <div class="content-item">{{ . }}</div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study-section full-width">
+        <div class="container">
+            <div class="case-study-header">
+                <h2 class="case-study-title">{{ .Params.case_study.title }}</h2>
+                <p class="case-study-subtitle">{{ .Params.case_study.subtitle }}</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3 class="case-study-card-title">{{ .Params.case_study.client_name }}</h3>
+
+                <div class="before-after-grid">
+                    <div class="before-section">
+                        <h4>Before R7</h4>
+                        <ul class="result-list">
+                            {{ range .Params.case_study.before }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+
+                    <div class="after-section">
+                        <h4>After 60 Days</h4>
+                        <ul class="result-list">
+                            {{ range .Params.case_study.after }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    "{{ .Params.case_study.testimonial.quote }}" - {{ .Params.case_study.testimonial.author }}
+                </div>
+            </div>
+
+            <div class="results-grid">
+                {{ range .Params.case_study.results }}
+                <div class="result-stat fade-in">
+                    <div class="result-icon">{{ .icon }}</div>
+                    <span class="result-number">{{ .number }}</span>
+                    <div class="result-label">{{ .label }}</div>
+                    <p class="result-description">{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section full-width" id="cta">
+        <div class="container">
+            <h2 class="final-cta-title">{{ .Params.final_cta.title }}</h2>
+
+            <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
+
+            <p class="cta-subtext">{{ .Params.final_cta.subtext }}</p>
+        </div>
+    </section>
+{{ end }}

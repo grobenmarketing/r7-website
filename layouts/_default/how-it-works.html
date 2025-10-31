@@ -1,0 +1,97 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <div class="hero-content">
+                <h1>{{ .Params.hero.title | markdownify }}</h1>
+                <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+                <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.process.title }}</h2>
+                <p class="section-subtitle">{{ .Params.process.subtitle }}</p>
+            </div>
+
+            <div class="process-flow">
+                {{ range .Params.process.steps }}
+                <div class="process-step fade-in">
+                    <div class="step-number">{{ .number }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section class="components-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.components.title }}</h2>
+                <p class="section-subtitle">{{ .Params.components.subtitle }}</p>
+            </div>
+
+            <div class="components-grid">
+                {{ range .Params.components.items }}
+                <div class="component-card fade-in">
+                    <div class="component-number">{{ .number }}</div>
+                    <h3 class="component-title">{{ .title }}</h3>
+                    <p class="component-description">{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different -->
+    <section class="difference-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Params.difference.title }}</h2>
+                <p class="section-subtitle">{{ .Params.difference.subtitle }}</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card traditional-card">
+                    <h3 class="comparison-title">{{ .Params.difference.traditional.title }}</h3>
+                    <ul class="comparison-list">
+                        {{ range .Params.difference.traditional.points }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+
+                <div class="comparison-card r7-card">
+                    <h3 class="comparison-title">{{ .Params.difference.r7.title }}</h3>
+                    <ul class="comparison-list">
+                        {{ range .Params.difference.r7.points }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">{{ .Params.cta.title }}</h2>
+
+                <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
+
+                <p class="cta-subtext">{{ .Params.cta.subtext }}</p>
+
+                <p class="cta-description">{{ .Params.cta.description }}</p>
+            </div>
+        </div>
+    </section>
+{{ end }}

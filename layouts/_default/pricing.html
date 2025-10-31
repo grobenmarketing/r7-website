@@ -1,0 +1,90 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero full-width">
+        <div class="container">
+            <h1>{{ .Params.hero.title | markdownify }}</h1>
+            <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+            <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section full-width">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ .Params.pricing_header }}</h2>
+            </div>
+
+            <div class="pricing-grid">
+                {{ range .Params.packages }}
+                <div class="pricing-card{{ if .popular }} popular{{ end }}">
+                    {{ if .popular }}
+                    <div class="popular-badge">{{ .badge }}</div>
+                    {{ if .secondary_badge }}
+                    <div class="founder-badge" style="margin-top: 12px;">{{ .secondary_badge }}</div>
+                    {{ end }}
+                    {{ else }}
+                    <div class="founder-badge">{{ .badge }}</div>
+                    {{ end }}
+
+                    <h3 class="package-name">{{ .name }}</h3>
+                    <p class="package-tagline">{{ .tagline }}</p>
+
+                    <div class="regular-price">{{ .regular_price }}</div>
+                    <div class="price">{{ .price }}<span class="price-period">{{ .period }}</span></div>
+                    <div class="implementation-fee">
+                        {{ .implementation_fee }} <span class="strike">{{ .implementation_regular }}</span>
+                    </div>
+
+                    <div class="key-highlights">
+                        {{ range .key_highlights }}
+                        <div class="highlight-item">
+                            <div class="highlight-icon">{{ .icon }}</div>
+                            <div class="highlight-content">
+                                <div class="highlight-title">{{ .title }}</div>
+                                <div class="highlight-description">{{ .description }}</div>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+
+                    <button class="expand-features" onclick="toggleFeatures('{{ .expand_id }}')">
+                        See Full Feature List
+                        <span class="expand-icon" id="{{ .expand_id }}-icon">▼</span>
+                    </button>
+
+                    <div class="full-feature-list" id="{{ .expand_id }}-features">
+                        {{ range .features }}
+                        <div class="feature-section">
+                            <div class="feature-section-title">{{ .section }}</div>
+                            {{ range .items }}
+                            <div class="feature-item">{{ . }}</div>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+
+                    <div class="time-investment">
+                        {{ .time_investment }}
+                    </div>
+
+                    <a href="tel:{{ $.Site.Params.phoneRaw }}" class="pricing-cta">Get Started: {{ $.Site.Params.phone }}</a>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="urgency-box">
+                <p class="urgency-title">{{ .Params.urgency.title }}</p>
+                <p class="urgency-text">{{ .Params.urgency.text }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section full-width">
+        <div class="container">
+            <h2 class="cta-title">{{ .Params.final_cta.title }}</h2>
+            <a href="tel:{{ .Site.Params.phoneRaw }}" class="cta-phone">{{ .Site.Params.phone }}</a>
+        </div>
+    </section>
+{{ end }}
