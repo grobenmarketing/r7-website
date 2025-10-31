@@ -1045,6 +1045,184 @@ body {
     line-height: 1.4;
 }
 
+/* Case Study Sections (Results Page) */
+.case-study-section {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.case-study-section:nth-child(even) {
+    background: #e8e5d4;
+}
+
+.case-study-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.case-study-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.case-study-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+.case-study-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 24px rgba(42, 74, 92, 0.08);
+    border: 1px solid #bdc3c7;
+    position: relative;
+}
+
+.case-study-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f7931e, #cf071d);
+    border-radius: 16px 16px 0 0;
+}
+
+.problem-section, .solution-section, .result-section {
+    margin-bottom: 32px;
+}
+
+.section-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cf071d;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.content-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2a4a5c;
+    margin-bottom: 16px;
+}
+
+.testimonial {
+    background: #e8e5d4;
+    border-left: 4px solid #f7931e;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 32px;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2a4a5c;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 16px;
+}
+
+/* Results Section (Results Page) */
+.results-section {
+    padding: 120px 0;
+    background: #2a4a5c;
+    color: #ffffff;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.results-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.results-subtitle {
+    font-size: 18px;
+    color: #bdc3c7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.result-card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid #bdc3c7;
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(26, 26, 26, 0.3);
+    border-color: #f7931e;
+}
+
+.result-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f7931e;
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.result-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.result-description {
+    color: #bdc3c7;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.philosophy-quote {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    border: 2px solid #f7931e;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.philosophy-text {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #e8e5d4;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.philosophy-author {
+    font-weight: 600;
+    color: #bdc3c7;
+    font-size: 16px;
+}
+
 /* Process Section (How It Works Page) */
 .process-section {
     padding: 120px 0;
@@ -1473,8 +1651,16 @@ body {
         padding: 0 20px;
     }
 
-    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section, .process-section, .pricing-section {
+    .hero, .problem-section, .features-section, .benefits-section, .case-study-section, .final-cta-section, .story-section, .philosophy-section, .difference-section, .team-section, .location-section, .cta-section, .process-section, .pricing-section, .results-section {
         padding: 80px 0;
+    }
+
+    .case-study-content {
+        padding: 32px 24px;
+    }
+
+    .philosophy-quote {
+        padding: 32px 24px;
     }
 
     .hero h1 {
@@ -1489,8 +1675,12 @@ body {
         font-size: 18px;
     }
 
-    .section-title, .case-study-title, .final-cta-title, .cta-title, .location-title {
+    .section-title, .case-study-title, .final-cta-title, .cta-title, .location-title, .results-title {
         font-size: 32px;
+    }
+
+    .results-header {
+        margin-bottom: 60px;
     }
 
     .story-step {
@@ -1537,7 +1727,7 @@ body {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .components-grid, .benefits-grid, .results-grid {
+    .components-grid, .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1546,6 +1736,10 @@ body {
     }
 
     .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .results-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
