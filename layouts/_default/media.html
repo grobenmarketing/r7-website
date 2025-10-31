@@ -7,9 +7,9 @@
     <section class="hero media-hero full-width">
         <div class="container">
             <div class="hero-content">
-                <h1>Follow the <span class="hero-highlight">R7 Creative</span> Co-Founders</h1>
-                <p class="hero-subtitle">Stay connected with Jordan and Keith</p>
-                <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+                <h1>{{ .Params.hero.title | markdownify }}</h1>
+                <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+                <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
             </div>
         </div>
     </section>
@@ -18,72 +18,29 @@
     <section class="founders-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Connect With Our Co-Founders</h2>
-                <p class="section-subtitle">Marketing insights, business strategies, and behind-the-scenes content</p>
+                <h2 class="section-title">{{ .Params.founders.title }}</h2>
+                <p class="section-subtitle">{{ .Params.founders.subtitle }}</p>
             </div>
 
             <div class="founders-grid">
-                <!-- Jordan Groben -->
+                {{ range .Params.founders.members }}
                 <div class="founder-card fade-in">
-                    <div class="founder-avatar">JG</div>
-                    <h3 class="founder-name">Jordan Groben</h3>
-                    <p class="founder-title">Director of Sales & Partnerships</p>
+                    <div class="founder-avatar">{{ .initials }}</div>
+                    <h3 class="founder-name">{{ .name }}</h3>
+                    <p class="founder-title">{{ .title }}</p>
 
                     <div class="social-links">
-                        <a href="https://www.youtube.com/@Jordanandkeithgroben" class="social-link youtube">
+                        {{ range .social }}
+                        <a href="{{ .url }}" class="social-link {{ .platform }}">
                             <div class="social-icon">
-                                <i class="fab fa-youtube"></i>
+                                <i class="{{ .icon }}"></i>
                             </div>
-                            YouTube
+                            {{ .label }}
                         </a>
-                        <a href="https://www.instagram.com/jordangroben/" class="social-link instagram">
-                            <div class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            Instagram
-                        </a>
-                        <a href="https://www.tiktok.com/@jordangroben" class="social-link tiktok">
-                            <div class="social-icon">
-                                <i class="fab fa-tiktok"></i>
-                            </div>
-                            TikTok
-                        </a>
-                        <a href="https://www.linkedin.com/in/jordan-groben-6a268834b/" class="social-link linkedin">
-                            <div class="social-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            LinkedIn
-                        </a>
+                        {{ end }}
                     </div>
                 </div>
-
-                <!-- Keith Groben -->
-                <div class="founder-card fade-in">
-                    <div class="founder-avatar">KG</div>
-                    <h3 class="founder-name">Keith Groben</h3>
-                    <p class="founder-title">President</p>
-
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/watch?v=kiFFQkMPYsA&list=PLbFRgBsnus8fcnHl65JuPDTJMatakkKSP" class="social-link youtube">
-                            <div class="social-icon">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                            YouTube
-                        </a>
-                        <a href="https://www.instagram.com/keith.groben/" class="social-link instagram">
-                            <div class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            Instagram
-                        </a>
-                        <a href="https://www.linkedin.com/in/keith-groben/" class="social-link linkedin">
-                            <div class="social-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            LinkedIn
-                        </a>
-                    </div>
-                </div>
+                {{ end }}
             </div>
         </div>
     </section>
@@ -92,9 +49,9 @@
     <section class="company-info-section full-width">
         <div class="container">
             <div class="company-info">
-                <h2 class="company-title">Ready to Win The 4-Minute Decision?</h2>
-                <p class="company-description">See how our "You Capture, We Create" system can help your business stop losing phone calls to competitors who look more active online.</p>
-                <a href="tel:{{ .Site.Params.phoneRaw }}" class="company-cta">Get Started: {{ .Site.Params.phone }}</a>
+                <h2 class="company-title">{{ .Params.company_info.title }}</h2>
+                <p class="company-description">{{ .Params.company_info.description }}</p>
+                <a href="tel:{{ .Site.Params.phoneRaw }}" class="company-cta">{{ .Params.company_info.cta_text }}: {{ .Site.Params.phone }}</a>
             </div>
         </div>
     </section>

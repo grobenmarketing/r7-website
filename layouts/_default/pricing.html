@@ -2,9 +2,9 @@
     <!-- Hero Section -->
     <section class="hero full-width">
         <div class="container">
-            <h1>Stop Losing <span class="hero-highlight">Phone Calls</span> to Competitors</h1>
-            <p class="hero-subtitle">Every month, more than 51 potential customers eliminate your business in browser tabs. The investment to fix this is less than losing one good customer.</p>
-            <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+            <h1>{{ .Params.hero.title | markdownify }}</h1>
+            <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+            <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
         </div>
     </section>
 
@@ -12,172 +12,70 @@
     <section class="pricing-section full-width">
         <div class="container">
             <div class="section-header">
-                <h2>Founder's Pricing - Limited to First 50 Clients</h2>
+                <h2>{{ .Params.pricing_header }}</h2>
             </div>
 
             <div class="pricing-grid">
-                <!-- 4-Minute Winner -->
-                <div class="pricing-card">
-                    <div class="founder-badge">FOUNDER'S PRICING</div>
+                {{ range .Params.packages }}
+                <div class="pricing-card{{ if .popular }} popular{{ end }}">
+                    {{ if .popular }}
+                    <div class="popular-badge">{{ .badge }}</div>
+                    {{ if .secondary_badge }}
+                    <div class="founder-badge" style="margin-top: 12px;">{{ .secondary_badge }}</div>
+                    {{ end }}
+                    {{ else }}
+                    <div class="founder-badge">{{ .badge }}</div>
+                    {{ end }}
 
-                    <h3 class="package-name">4-Minute Winner</h3>
-                    <p class="package-tagline">Perfect for businesses ready to dominate Google Business Search</p>
+                    <h3 class="package-name">{{ .name }}</h3>
+                    <p class="package-tagline">{{ .tagline }}</p>
 
-                    <div class="regular-price">$1,200</div>
-                    <div class="price">$550<span class="price-period">/month</span></div>
+                    <div class="regular-price">{{ .regular_price }}</div>
+                    <div class="price">{{ .price }}<span class="price-period">{{ .period }}</span></div>
                     <div class="implementation-fee">
-                        + $300 implementation fee <span class="strike">(reg. $600)</span>
+                        {{ .implementation_fee }} <span class="strike">{{ .implementation_regular }}</span>
                     </div>
 
                     <div class="key-highlights">
+                        {{ range .key_highlights }}
                         <div class="highlight-item">
-                            <div class="highlight-icon">📱</div>
+                            <div class="highlight-icon">{{ .icon }}</div>
                             <div class="highlight-content">
-                                <div class="highlight-title">2 Posts Per Week</div>
-                                <div class="highlight-description">104 pieces of content annually</div>
+                                <div class="highlight-title">{{ .title }}</div>
+                                <div class="highlight-description">{{ .description }}</div>
                             </div>
                         </div>
-
-                        <div class="highlight-item">
-                            <div class="highlight-icon">🎯</div>
-                            <div class="highlight-content">
-                                <div class="highlight-title">Google Business Only</div>
-                                <div class="highlight-description">Where local customers make decisions</div>
-                            </div>
-                        </div>
-
-                        <div class="highlight-item">
-                            <div class="highlight-icon">📊</div>
-                            <div class="highlight-content">
-                                <div class="highlight-title">Performance Tracking</div>
-                                <div class="highlight-description">Monthly analytics & insights</div>
-                            </div>
-                        </div>
+                        {{ end }}
                     </div>
 
-                    <button class="expand-features" onclick="toggleFeatures('winner')">
+                    <button class="expand-features" onclick="toggleFeatures('{{ .expand_id }}')">
                         See Full Feature List
-                        <span class="expand-icon" id="winner-icon">▼</span>
+                        <span class="expand-icon" id="{{ .expand_id }}-icon">▼</span>
                     </button>
 
-                    <div class="full-feature-list" id="winner-features">
+                    <div class="full-feature-list" id="{{ .expand_id }}-features">
+                        {{ range .features }}
                         <div class="feature-section">
-                            <div class="feature-section-title">Content Posting</div>
-                            <div class="feature-item">2 posts per week (104 pieces annually)</div>
-                            <div class="feature-item">Google Business Profile only</div>
+                            <div class="feature-section-title">{{ .section }}</div>
+                            {{ range .items }}
+                            <div class="feature-item">{{ . }}</div>
+                            {{ end }}
                         </div>
-
-                        <div class="feature-section">
-                            <div class="feature-section-title">Content & Creation</div>
-                            <div class="feature-item">Content planning with assigned capture dates</div>
-                            <div class="feature-item">Professional editing, captions, and scheduling</div>
-                            <div class="feature-item">Strategic brand voice development</div>
-                            <div class="feature-item">Asset library - we save and repurpose your best content</div>
-                        </div>
-
-                        <div class="feature-section">
-                            <div class="feature-section-title">Support & Analytics</div>
-                            <div class="feature-item">Bi-weekly strategy calls to plan content</div>
-                            <div class="feature-item">Monthly performance analytics</div>
-                            <div class="feature-item">Engagement management</div>
-                            <div class="feature-item">Google Business Profile optimization</div>
-                        </div>
+                        {{ end }}
                     </div>
 
                     <div class="time-investment">
-                        ⏱️ Your time: 10-20 minutes/week capturing content
+                        {{ .time_investment }}
                     </div>
 
                     <a href="tel:{{ $.Site.Params.phoneRaw }}" class="pricing-cta">Get Started: {{ $.Site.Params.phone }}</a>
                 </div>
-
-                <!-- 4-Minute Dominator -->
-                <div class="pricing-card popular">
-                    <div class="popular-badge">MOST POPULAR</div>
-                    <div class="founder-badge" style="margin-top: 12px;">FOUNDER'S PRICING</div>
-
-                    <h3 class="package-name">4-Minute Dominator</h3>
-                    <p class="package-tagline">Everything in Winner PLUS full social media domination</p>
-
-                    <div class="regular-price">$1,800</div>
-                    <div class="price">$950<span class="price-period">/month</span></div>
-                    <div class="implementation-fee">
-                        + $300 implementation fee <span class="strike">(reg. $600)</span>
-                    </div>
-
-                    <div class="key-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">🚀</div>
-                            <div class="highlight-content">
-                                <div class="highlight-title">3 Posts Per Week</div>
-                                <div class="highlight-description">156 pieces of content annually</div>
-                            </div>
-                        </div>
-
-                        <div class="highlight-item">
-                            <div class="highlight-icon">🌐</div>
-                            <div class="highlight-content">
-                                <div class="highlight-title">ALL Platforms</div>
-                                <div class="highlight-description">Google, Facebook, Instagram & more</div>
-                            </div>
-                        </div>
-
-                        <div class="highlight-item">
-                            <div class="highlight-icon">📊</div>
-                            <div class="highlight-content">
-                                <div class="highlight-title">Advanced Analytics</div>
-                                <div class="highlight-description">Deep performance insights across all channels</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="expand-features" onclick="toggleFeatures('dominator')">
-                        See Full Feature List
-                        <span class="expand-icon" id="dominator-icon">▼</span>
-                    </button>
-
-                    <div class="full-feature-list" id="dominator-features">
-                        <div class="feature-section">
-                            <div class="feature-section-title">Content Posting</div>
-                            <div class="feature-item">3 posts per week (156 pieces annually)</div>
-                            <div class="feature-item">ALL platforms: Google Business, Facebook, Instagram & more</div>
-                        </div>
-
-                        <div class="feature-section">
-                            <div class="feature-section-title">Content & Creation</div>
-                            <div class="feature-item">Content planning with assigned capture dates</div>
-                            <div class="feature-item">Professional editing, captions, and scheduling</div>
-                            <div class="feature-item">Strategic brand voice development</div>
-                            <div class="feature-item">Asset library - we save and repurpose your best content</div>
-                            <div class="feature-item">Advanced social media strategy coordinated across platforms</div>
-                        </div>
-
-                        <div class="feature-section">
-                            <div class="feature-section-title">Support & Analytics</div>
-                            <div class="feature-item">Bi-weekly strategy calls to plan content</div>
-                            <div class="feature-item">Monthly performance analytics</div>
-                            <div class="feature-item">Quarterly strategy sessions for deep dives</div>
-                            <div class="feature-item">Engagement management</div>
-                            <div class="feature-item">Profile optimization across all platforms</div>
-                        </div>
-
-                        <div class="feature-section">
-                            <div class="feature-section-title">Exclusive Features</div>
-                            <div class="feature-item">Link-in-bio page - mobile-optimized conversion hub</div>
-                        </div>
-                    </div>
-
-                    <div class="time-investment">
-                        ⏱️ Your time: 10-20 minutes/week capturing content
-                    </div>
-
-                    <a href="tel:{{ $.Site.Params.phoneRaw }}" class="pricing-cta">Get Started: {{ $.Site.Params.phone }}</a>
-                </div>
+                {{ end }}
             </div>
 
             <div class="urgency-box">
-                <p class="urgency-title">⚡ Founder's Pricing Ends Soon</p>
-                <p class="urgency-text">This special pricing is limited to our first 50 clients only. Lock in your rate now - once we're full, pricing moves to standard rates ($1,200/$1,800 monthly).</p>
+                <p class="urgency-title">{{ .Params.urgency.title }}</p>
+                <p class="urgency-text">{{ .Params.urgency.text }}</p>
             </div>
         </div>
     </section>
@@ -185,8 +83,8 @@
     <!-- Final CTA -->
     <section class="cta-section full-width">
         <div class="container">
-            <h2 class="cta-title">Ready to Stop Losing Those Phone Calls?</h2>
-            <a href="tel:{{ $.Site.Params.phoneRaw }}" class="cta-phone">{{ $.Site.Params.phone }}</a>
+            <h2 class="cta-title">{{ .Params.final_cta.title }}</h2>
+            <a href="tel:{{ .Site.Params.phoneRaw }}" class="cta-phone">{{ .Site.Params.phone }}</a>
         </div>
     </section>
 {{ end }}

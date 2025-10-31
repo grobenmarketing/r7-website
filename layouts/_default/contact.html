@@ -2,9 +2,9 @@
     <!-- Hero Section -->
     <section class="hero full-width">
         <div class="container">
-            <h1>Ready to Win The <span class="hero-highlight">4-Minute Decision?</span></h1>
-            <p class="hero-subtitle">Call now to get your FREE visibility audit</p>
-            <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+            <h1>{{ .Params.hero.title | markdownify }}</h1>
+            <p class="hero-subtitle">{{ .Params.hero.subtitle }}</p>
+            <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
         </div>
     </section>
 
@@ -14,28 +14,29 @@
             <div class="contact-container">
                 <!-- Primary Phone Contact -->
                 <div class="phone-section fade-in">
-                    <div class="phone-label">Call or Text</div>
+                    <div class="phone-label">{{ .Params.contact.phone_label }}</div>
                     <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
-                    <div class="phone-cta">Get your FREE visibility audit</div>
+                    <div class="phone-cta">{{ .Params.contact.phone_cta }}</div>
                 </div>
 
                 <!-- Additional Contact Methods -->
                 <div class="contact-grid">
+                    {{ range .Params.contact.methods }}
                     <div class="contact-card fade-in">
-                        <div class="contact-icon">📧</div>
-                        <h3 class="contact-title">Email</h3>
+                        <div class="contact-icon">{{ .icon }}</div>
+                        <h3 class="contact-title">{{ .title }}</h3>
                         <div class="contact-info">
-                            <a href="mailto:jordan@r7creative.com" class="contact-link">jordan@r7creative.com</a>
+                            {{ if .primary_link }}
+                            <a href="{{ .primary_link }}" class="contact-link">{{ .primary }}</a>
+                            {{ else }}
+                            {{ .primary }}
+                            {{ end }}
                         </div>
-                        <div class="contact-info">We respond within 24 hours</div>
+                        {{ if .secondary }}
+                        <div class="contact-info">{{ .secondary }}</div>
+                        {{ end }}
                     </div>
-
-                    <div class="contact-card fade-in">
-                        <div class="contact-icon">📍</div>
-                        <h3 class="contact-title">Location</h3>
-                        <div class="contact-info">Ashland, Ohio</div>
-                        <div class="contact-info">Serving businesses nationwide</div>
-                    </div>
+                    {{ end }}
                 </div>
             </div>
         </div>
@@ -45,47 +46,29 @@
     <section class="location-hours-section full-width">
         <div class="container">
             <div class="section-header">
-                <h2>Location & Hours</h2>
-                <p>Based in Ohio, serving businesses nationwide</p>
+                <h2>{{ .Params.location_hours.title }}</h2>
+                <p>{{ .Params.location_hours.subtitle }}</p>
             </div>
 
             <div class="location-hours-grid">
                 <div class="info-card fade-in">
-                    <h3>Our Location</h3>
+                    <h3>{{ .Params.location_hours.location.title }}</h3>
                     <div class="location-info">
-                        <p><strong>Ashland, Ohio</strong></p>
-                        <p>Serving local and nationwide businesses</p>
-                        <p>Remote consultations available</p>
+                        {{ range .Params.location_hours.location.details }}
+                        <p>{{ . | markdownify }}</p>
+                        {{ end }}
                     </div>
                 </div>
 
                 <div class="info-card fade-in">
-                    <h3>Business Hours</h3>
+                    <h3>{{ .Params.location_hours.hours.title }}</h3>
                     <ul class="hours-list">
+                        {{ range .Params.location_hours.hours.schedule }}
                         <li class="hours-item">
-                            <span class="hours-day">Monday</span>
-                            <span class="hours-time">8:00 AM - 5:00 PM</span>
+                            <span class="hours-day">{{ .day }}</span>
+                            <span class="hours-time">{{ .time }}</span>
                         </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Tuesday</span>
-                            <span class="hours-time">8:00 AM - 5:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Wednesday</span>
-                            <span class="hours-time">8:00 AM - 5:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Thursday</span>
-                            <span class="hours-time">8:00 AM - 5:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Friday</span>
-                            <span class="hours-time">8:00 AM - 5:00 PM</span>
-                        </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Weekend</span>
-                            <span class="hours-time">Closed</span>
-                        </li>
+                        {{ end }}
                     </ul>
                 </div>
             </div>
@@ -95,12 +78,12 @@
     <!-- Final CTA -->
     <section class="cta-section full-width">
         <div class="container">
-            <h2 class="cta-title">Don't Let Another Month Go By</h2>
-            <p class="cta-subtitle">Stop watching potential customers eliminate you in browser tabs. Let's fix your 4-minute test performance.</p>
+            <h2 class="cta-title">{{ .Params.cta.title }}</h2>
+            <p class="cta-subtitle">{{ .Params.cta.subtitle }}</p>
 
             <a href="tel:{{ .Site.Params.phoneRaw }}" class="cta-phone">{{ .Site.Params.phone }}</a>
 
-            <p class="cta-description">See if you qualify for the same system that helped our clients land their biggest opportunities in their first month.</p>
+            <p class="cta-description">{{ .Params.cta.description }}</p>
         </div>
     </section>
 {{ end }}

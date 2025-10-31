@@ -3,8 +3,8 @@
     <section class="hero full-width">
         <div class="container">
             <div class="hero-content">
-                <h1>We Turn Businesses from <span class="hero-highlight">Invisible to Undeniable</span></h1>
-                <p class="hero-tagline">Human Touch Marketing in an AI & Automated World</p>
+                <h1>{{ .Params.hero.title | markdownify }}</h1>
+                <p class="hero-tagline">{{ .Params.hero.tagline }}</p>
             </div>
         </div>
     </section>
@@ -13,16 +13,16 @@
     <section class="story-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Story</h2>
+                <h2 class="section-title">{{ .Params.story.title }}</h2>
             </div>
 
             <div class="story-content">
-                <p>After analyzing 1,300+ businesses, we found 80% looked closed online despite thriving in the real world. Customers eliminated them during 4-minute decision windows, choosing competitors who simply looked more alive.</p>
-
-                <p>We built a solution: businesses provide 10 minutes of authentic work moments weekly, and we transform them into professional content that wins those critical decisions.</p>
+                {{ range .Params.story.paragraphs }}
+                <p>{{ . }}</p>
+                {{ end }}
 
                 <div class="highlight-box">
-                    <p>Your business doesn't need more followers. It needs more customers.</p>
+                    <p>{{ .Params.story.highlight }}</p>
                 </div>
             </div>
         </div>
@@ -32,21 +32,17 @@
     <section class="philosophy-section full-width">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Philosophy</h2>
+                <h2 class="section-title">{{ .Params.philosophy.title }}</h2>
             </div>
 
             <div class="philosophy-grid">
+                {{ range .Params.philosophy.items }}
                 <div class="philosophy-card fade-in">
-                    <div class="philosophy-icon">📈</div>
-                    <h3>Results-Focused</h3>
-                    <p>Our approach drives phone calls, quote requests, faster decisions, and less price resistance. We measure success in revenue, not reactions.</p>
+                    <div class="philosophy-icon">{{ .icon }}</div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
                 </div>
-
-                <div class="philosophy-card fade-in">
-                    <div class="philosophy-icon">🎯</div>
-                    <h3>Authentic Impact</h3>
-                    <p>Social media success should be measured in business outcomes. We create content that converts browsers into buyers during those critical 4-minute decisions.</p>
-                </div>
+                {{ end }}
             </div>
         </div>
     </section>
@@ -55,29 +51,25 @@
     <section class="difference-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How We're Different</h2>
+                <h2 class="section-title">{{ .Params.difference.title }}</h2>
             </div>
 
             <div class="comparison-grid">
                 <div class="comparison-card traditional-card">
-                    <h3 class="comparison-title">Traditional Agencies</h3>
+                    <h3 class="comparison-title">{{ .Params.difference.traditional.title }}</h3>
                     <ul class="comparison-list">
-                        <li>Generic content without your input</li>
-                        <li>$2,000-5,000+ monthly retainers</li>
-                        <li>Focus on likes and followers</li>
-                        <li>Long-term contracts required</li>
-                        <li>Content lacks authenticity</li>
+                        {{ range .Params.difference.traditional.points }}
+                        <li>{{ . }}</li>
+                        {{ end }}
                     </ul>
                 </div>
 
                 <div class="comparison-card r7-card">
-                    <h3 class="comparison-title">R7 Creative</h3>
+                    <h3 class="comparison-title">{{ .Params.difference.r7.title }}</h3>
                     <ul class="comparison-list">
-                        <li>Authentic collaboration with you</li>
-                        <li>Affordable investment that fits your budget</li>
-                        <li>Just 10 minutes of your time per week</li>
-                        <li>Focus on business results that matter</li>
-                        <li>Your real work becomes compelling content</li>
+                        {{ range .Params.difference.r7.points }}
+                        <li>{{ . }}</li>
+                        {{ end }}
                     </ul>
                 </div>
             </div>
@@ -88,30 +80,18 @@
     <section class="team-section full-width">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Meet The Team</h2>
+                <h2 class="section-title">{{ .Params.team.title }}</h2>
             </div>
 
             <div class="team-grid">
+                {{ range .Params.team.members }}
                 <div class="team-card fade-in">
-                    <div class="team-avatar">KG</div>
-                    <h3 class="team-name">Keith Groben</h3>
-                    <div class="team-role">President</div>
-                    <p class="team-bio">The architect of our markeitng systems with 20 years of proven results.</p>
+                    <div class="team-avatar">{{ .initials }}</div>
+                    <h3 class="team-name">{{ .name }}</h3>
+                    <div class="team-role">{{ .role }}</div>
+                    <p class="team-bio">{{ .bio }}</p>
                 </div>
-
-                <div class="team-card fade-in">
-                    <div class="team-avatar">SG</div>
-                    <h3 class="team-name">Stacie Groben</h3>
-                    <div class="team-role">Director of Operations</div>
-                    <p class="team-bio">Outstanding attention to detail and people, ensuring everything works well for our clients first.</p>
-                </div>
-
-                <div class="team-card fade-in">
-                    <div class="team-avatar">JG</div>
-                    <h3 class="team-name">Jordan Groben</h3>
-                    <div class="team-role">Director of Sales & Partnerships</div>
-                    <p class="team-bio">Strengthens existing relationships with our clients and develops new ones.</p>
-                </div>
+                {{ end }}
             </div>
         </div>
     </section>
@@ -120,10 +100,10 @@
     <section class="location-section full-width">
         <div class="container">
             <div class="location-content">
-                <h2 class="location-title">Ashland, Ohio</h2>
-                <p class="location-details"><strong>North East Ohio</strong> • Serving Nationwide</p>
-                <p class="location-details">In Person and Remote Consultations Available</p>
-                <p class="location-details">Hours: Monday-Friday, 8:00 AM - 5:00 PM EST</p>
+                <h2 class="location-title">{{ .Params.location.title }}</h2>
+                {{ range .Params.location.details }}
+                <p class="location-details">{{ . | markdownify }}</p>
+                {{ end }}
             </div>
         </div>
     </section>
@@ -132,13 +112,13 @@
     <section class="cta-section full-width">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Stop Looking Closed Online?</h2>
+                <h2 class="cta-title">{{ .Params.cta.title }}</h2>
 
                 <div class="contact-methods">
                     <a href="tel:{{ .Site.Params.phoneRaw }}" class="phone-number">{{ .Site.Params.phone }}</a>
                 </div>
 
-                <p class="cta-description">Get your FREE visibility audit</p>
+                <p class="cta-description">{{ .Params.cta.description }}</p>
             </div>
         </div>
     </section>
