@@ -1,0 +1,46 @@
+baseURL = 'https://r7creative.com/'
+languageCode = 'en-us'
+title = 'R7 Creative - Win the 4-Minute Decision'
+
+[params]
+  description = 'More Calls From Local Business Searches - Human Touch Marketing in an AI & Automated World'
+  author = 'R7 Creative'
+  phone = '(567) 333-8779'
+  phoneRaw = '5673338779'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+
+  [[menu.main]]
+    name = 'How It Works'
+    url = '/how-it-works/'
+    weight = 2
+
+  [[menu.main]]
+    name = 'Results'
+    url = '/results/'
+    weight = 3
+    parent = 'How It Works'
+
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 4
+
+  [[menu.main]]
+    name = 'Pricing'
+    url = '/pricing/'
+    weight = 5
+
+  [[menu.main]]
+    name = 'Media'
+    url = '/media/'
+    weight = 6
+
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 7
